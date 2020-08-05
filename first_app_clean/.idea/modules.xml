@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/first_app_clean.iml" filepath="$PROJECT_DIR$/.idea/first_app_clean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="first_app_clean/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/data.iml" group="first_app_clean/data" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/domain.iml" group="first_app_clean/domain" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/first_app_clean.iml" filepath="$PROJECT_DIR$/.idea/modules/first_app_clean.iml" group="first_app_clean" />
     </modules>
   </component>
 </project>

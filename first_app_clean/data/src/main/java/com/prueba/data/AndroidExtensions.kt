@@ -1,4 +1,4 @@
-package com.prueba.data.extension
+package com.prueba.data
 
 import android.util.Log
 

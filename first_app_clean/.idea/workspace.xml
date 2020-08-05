@@ -1,13 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2000bfcd-b367-4e8a-9e9c-b8dc22da492a" name="Default Changelist" comment="" />
+    <list default="true" id="553d7367-e8d4-40ef-9d1a-f93c89e7202a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/first_app_clean.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createProject.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/androidTest/java/com/prueba/firstappclean/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/di/Modules.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/error/AndroidErrorHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/error/ErrorHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/executor/RxExecutor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/extension/ContextExtensions.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/extension/PreventMonkeyClicks.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/extension/ViewExtensions.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/navigator/Navigator.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/presenter/Presenter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/view/activity/RootActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/view/adapter/RootAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/view/app/App.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/view/fragment/RootFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/layout/view_progress.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/test/java/com/prueba/firstappclean/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/config/buildsystem/dependencies.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/config/quality/checkstyle/checkstyle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/data/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/data/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/data/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/java/com/prueba/data/extension/AndroidExtensions.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/java/com/prueba/data/model/Data.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/java/com/prueba/data/model/Site.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/java/com/prueba/data/model/SiteDetail.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/constants/Constants.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/executor/Executor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/CompletableInteractor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/FlowableInteractor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/MaybeInteractor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/ObservableInteractor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/SingleInteractor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/repository/Repository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_app_clean/settings.gradle" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="1fdE0dqq9CaSaMlrO3NIGtdrVFX" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ffsmccrhV8Xl2dQKIj39LSyOvB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -19,16 +109,76 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2000bfcd-b367-4e8a-9e9c-b8dc22da492a" name="Default Changelist" comment="" />
-      <created>1596539347963</created>
+      <changelist id="553d7367-e8d4-40ef-9d1a-f93c89e7202a" name="Default Changelist" comment="" />
+      <created>1596620641586</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1596539347963</updated>
+      <updated>1596620641586</updated>
     </task>
     <servers />
   </component>
