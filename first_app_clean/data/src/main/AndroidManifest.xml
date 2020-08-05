@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.prueba.data" />
+<manifest package="com.prueba.data" />

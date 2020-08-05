@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.prueba.firstappclean">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".view.app.App"
         android:allowBackup="true"
@@ -11,11 +13,13 @@
         android:theme="@style/AppTheme">
 
 
-        <!-- Add the following lines to launcher activity -->
-        <!--<intent-filter>-->
-        <!--<action android:name="android.intent.action.MAIN" />-->
-        <!--<category android:name="android.intent.category.LAUNCHER" />-->
-        <!--</intent-filter>-->
+        <activity android:name=".view.activity.SitesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.SiteDetailActivity" />
 
     </application>
 </manifest>

@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">first_app_clean</string>
+    <string name="app_name">FirstAppClean</string>
 
     <string name="default_error">There was an application error</string>
+
+    //Categories
+    <string name="planets">Planets</string>
+    <string name="people">People</string>
+    <string name="species">Species</string>
+    <string name="films">Films</string>
+    <string name="vehicles">Vehicles</string>
+    <string name="starships">Starships</string>
+    <string name="coordenadas">Coordenadas:</string>
+    <string name="datails">Detalles</string>
 </resources>

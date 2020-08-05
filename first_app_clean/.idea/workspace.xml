@@ -1,86 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="553d7367-e8d4-40ef-9d1a-f93c89e7202a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/first_app_clean.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SiteDetailActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SitesActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/SitesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_site_detail.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sites.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/com/prueba/data/datasource/network/api/SiteService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/com/prueba/data/model/Data.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/com/prueba/data/model/Site.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/com/prueba/data/model/SiteDetail.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createProject.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/androidTest/java/com/prueba/firstappclean/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/di/Modules.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/error/AndroidErrorHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/error/ErrorHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/executor/RxExecutor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/extension/ContextExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/extension/PreventMonkeyClicks.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/extension/ViewExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/navigator/Navigator.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/presenter/Presenter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/view/activity/RootActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/view/adapter/RootAdapter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/view/app/App.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/java/com/prueba/firstappclean/view/fragment/RootFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/layout/view_progress.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/app/src/test/java/com/prueba/firstappclean/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/config/buildsystem/dependencies.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/config/quality/checkstyle/checkstyle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/data/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/data/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/data/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/java/com/prueba/data/extension/AndroidExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/java/com/prueba/data/model/Data.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/java/com/prueba/data/model/Site.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/java/com/prueba/data/model/SiteDetail.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/data/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/constants/Constants.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/executor/Executor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/CompletableInteractor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/FlowableInteractor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/MaybeInteractor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/ObservableInteractor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/interactor/SingleInteractor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/domain/src/main/java/com/prueba/domain/repository/Repository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_app_clean/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/RootActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/RootAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/src/main/java/com/prueba/data/AndroidExtensions.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_27" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -106,8 +62,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/values" />
     <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.prueba.data.datasource.network.api" />
+      <recent name="com.prueba.firstappclean.view.adapter" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/values" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/data/src/main/java/com/prueba/data/model" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -117,7 +85,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -181,5 +149,47 @@
       <updated>1596620641586</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="575" y="289" key="AndroidCreateXmlResourceDialog" timestamp="1596624669901">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="575" y="289" key="AndroidCreateXmlResourceDialog/0.23.1440.823@0.23.1440.823" timestamp="1596624669901" />
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1596627003983">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1596627003983" />
+    <state width="1398" height="123" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1596626287254" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1596627003982">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1596627003982" />
+    <state width="1398" height="123" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1596626287253" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1596627003982">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1596627003982" />
+    <state width="1398" height="123" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1596626287252" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1596627003983">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1596627003983" />
+    <state width="1398" height="123" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1596626287254" />
+    <state width="1398" height="263" key="GridCell.Tab.1.bottom" timestamp="1596626949728">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state width="1398" height="263" key="GridCell.Tab.1.bottom/0.23.1440.822@0.23.1440.822" timestamp="1596626949728" />
+    <state width="1398" height="263" key="GridCell.Tab.1.center" timestamp="1596626949727">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state width="1398" height="263" key="GridCell.Tab.1.center/0.23.1440.822@0.23.1440.822" timestamp="1596626949727" />
+    <state width="1398" height="263" key="GridCell.Tab.1.left" timestamp="1596626949727">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state width="1398" height="263" key="GridCell.Tab.1.left/0.23.1440.822@0.23.1440.822" timestamp="1596626949727" />
+    <state width="1398" height="263" key="GridCell.Tab.1.right" timestamp="1596626949727">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state width="1398" height="263" key="GridCell.Tab.1.right/0.23.1440.822@0.23.1440.822" timestamp="1596626949727" />
   </component>
 </project>
