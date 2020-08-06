@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.prueba.data.datasource.network.api.SiteService
 import com.prueba.data.model.SiteDetail
 import com.prueba.firstappclean.R
+import com.prueba.firstappclean.extension.changeNull
 import kotlinx.android.synthetic.main.activity_site_detail.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -40,26 +41,21 @@ class SiteDetailActivity : Activity() {
                     titleDetail.text = siteDetail?.title
 
                     addres.text = siteDetail?.address
-                    if (addres.text == "null")
-                        addres.text = "-"
+                    addres.changeNull()
 
                     transport.text = siteDetail?.transport
-                    if (transport.text == "null")
-                        transport.text = "-"
+                    transport.changeNull()
 
                     email.text = siteDetail?.email
-                    if (email.text == "null")
-                        email.text = "-"
+                    email.changeNull()
 
                     geocoordinatesDetail.text = siteDetail?.geocoordinates
 
                     description.text = siteDetail?.description
-                    if (description.text == "null")
-                        description.text = "-"
+                    description.changeNull()
                     
                     phone.text = siteDetail?.phone
-                    if (phone.text == "null")
-                        phone.text = "-"
+                    phone.changeNull()
                 }
 
                 override fun onFailure(call: Call<SiteDetail>, t: Throwable) {

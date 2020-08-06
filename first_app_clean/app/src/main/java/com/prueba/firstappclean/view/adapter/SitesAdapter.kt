@@ -13,17 +13,17 @@ class SitesAdapter(
         private val siteList: MutableList<Site> = mutableListOf(),
         private val onDetailClick: (Site) -> Unit
 ) :
-    RecyclerView.Adapter<SitesAdapter.SiteHolder>() {
+        RecyclerView.Adapter<SitesAdapter.SiteHolder>() {
 
     override fun onBindViewHolder(holder: SiteHolder, position: Int) =
-        holder.bind(siteList[position])
+            holder.bind(siteList[position])
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SiteHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_site, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.item_site, parent, false)
         return SiteHolder(
-            itemView
+                itemView
         ) { onDetailClick(siteList[it]) }
     }
 
@@ -34,16 +34,16 @@ class SitesAdapter(
         notifyDataSetChanged()
     }
 
-    fun add(site: Site){
+    fun add(site: Site) {
         siteList.add(site)
         notifyDataSetChanged()
     }
 
     class SiteHolder(
-        itemView: View,
-        private val onDetailClick: (Int) -> Unit = {}
+            itemView: View,
+            private val onDetailClick: (Int) -> Unit = {}
     ) :
-        RecyclerView.ViewHolder(itemView) {
+            RecyclerView.ViewHolder(itemView) {
         init {
             itemView.details.setOnClickListener { onDetailClick(adapterPosition) }
         }

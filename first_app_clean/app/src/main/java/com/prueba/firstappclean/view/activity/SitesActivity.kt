@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.prueba.firstappclean.view.activity.SiteDetailActivity
 import com.prueba.data.datasource.network.api.SiteService
 import com.prueba.data.model.Data
 import com.prueba.firstappclean.R
@@ -20,11 +19,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 class SitesActivity : AppCompatActivity() {
 
     private val adapter = SitesAdapter(
-        onDetailClick = {
-            val intent = Intent(this, SiteDetailActivity::class.java)
-            intent.putExtra("id", it.id)
-            startActivity(intent)
-        }
+            onDetailClick = {
+                val intent = Intent(this, SiteDetailActivity::class.java)
+                intent.putExtra("id", it.id)
+                startActivity(intent)
+            }
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +38,9 @@ class SitesActivity : AppCompatActivity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://t21services.herokuapp.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+                .baseUrl("http://t21services.herokuapp.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
     }
 
     private fun generateSites() {
