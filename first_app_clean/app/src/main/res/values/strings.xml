@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FirstAppClean</string>
+    <string name="app_name">Sites of Barcelona</string>
 
     <string name="default_error">There was an application error</string>
 
@@ -10,6 +10,6 @@
     <string name="films">Films</string>
     <string name="vehicles">Vehicles</string>
     <string name="starships">Starships</string>
-    <string name="coordenadas">Coordenadas:</string>
-    <string name="datails">Detalles</string>
+    <string name="coordenadas">Coordinates:</string>
+    <string name="datails">Details</string>
 </resources>

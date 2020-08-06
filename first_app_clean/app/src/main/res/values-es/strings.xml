@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lugares de Barcelona</string>
+
+    <string name="default_error">Error</string>
+
+    //Categorías
+    <string name="planets">Planetas</string>
+    <string name="people">Personas</string>
+    <string name="species">Especies</string>
+    <string name="films">Películas</string>
+    <string name="vehicles">Vehículos</string>
+    <string name="starships">Naves espaciales</string>
+    <string name="coordenadas">Coordenadas</string>
+    <string name="datails">Detalles</string>
+</resources>

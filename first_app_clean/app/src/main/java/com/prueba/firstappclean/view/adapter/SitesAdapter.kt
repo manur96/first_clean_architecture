@@ -20,19 +20,11 @@ class SitesAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SiteHolder {
-        val itemView =
-                LayoutInflater.from(parent.context).inflate(R.layout.item_site, parent, false)
-        return SiteHolder(
-                itemView
-        ) { onDetailClick(siteList[it]) }
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_site, parent, false)
+        return SiteHolder(itemView) { onDetailClick(siteList[it]) }
     }
 
     override fun getItemCount(): Int = siteList.size
-
-    fun addAll(sites: List<Site>) {
-        siteList.addAll(sites)
-        notifyDataSetChanged()
-    }
 
     fun add(site: Site) {
         siteList.add(site)
@@ -42,8 +34,7 @@ class SitesAdapter(
     class SiteHolder(
             itemView: View,
             private val onDetailClick: (Int) -> Unit = {}
-    ) :
-            RecyclerView.ViewHolder(itemView) {
+    ) : RecyclerView.ViewHolder(itemView) {
         init {
             itemView.details.setOnClickListener { onDetailClick(adapterPosition) }
         }

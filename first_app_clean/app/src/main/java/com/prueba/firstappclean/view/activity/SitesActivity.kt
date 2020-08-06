@@ -45,12 +45,11 @@ class SitesActivity : AppCompatActivity() {
 
     private fun generateSites() {
         val service = getRetrofit().create(SiteService::class.java)
-        val call = service.getAllPoints()
-        call.enqueue(object : Callback<Data> {
+        service.getAllPoints().enqueue(object : Callback<Data> {
             override fun onResponse(call: Call<Data>?, response: Response<Data>?) {
-                val datos = response?.body()
-                if (datos != null) {
-                    for (site in datos.list) {
+                val data = response?.body()
+                if (data != null) {
+                    for (site in data.list) {
                         adapter.add(site)
                     }
                 }

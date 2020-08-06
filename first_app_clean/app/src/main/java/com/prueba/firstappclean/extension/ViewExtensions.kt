@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import org.w3c.dom.Text
+import com.prueba.domain.constants.Constants.Companion.NULL_STRING
 
 /**
  * ViewExtensions.
@@ -27,8 +27,8 @@ fun View.showMe() {
 }
 
 /**
- * TextView
+ * TextViewExtensions
  */
-fun TextView.changeNull(){
-    if (this.text == "null") this.text = "-"
+fun TextView.changeNull() {
+    if (this.text == NULL_STRING) this.text = "-"
 }

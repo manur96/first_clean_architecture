@@ -30,15 +30,15 @@ class SiteDetailActivity : Activity() {
     }
 
     private fun getSiteById() {
-        var siteDetail: SiteDetail? = null
         val service = getRetrofit().create(SiteService::class.java)
         val id = intent.getStringExtra("id")
         if (id != null) {
             service.getPointById(id).enqueue(object : Callback<SiteDetail> {
                 override fun onResponse(call: Call<SiteDetail>?, response: Response<SiteDetail>?) {
-                    siteDetail = response?.body()
+                    val siteDetail = response?.body()
 
                     titleDetail.text = siteDetail?.title
+                    titleDetail.changeNull()
 
                     addres.text = siteDetail?.address
                     addres.changeNull()
@@ -50,10 +50,11 @@ class SiteDetailActivity : Activity() {
                     email.changeNull()
 
                     geocoordinatesDetail.text = siteDetail?.geocoordinates
+                    geocoordinatesDetail.changeNull()
 
                     description.text = siteDetail?.description
                     description.changeNull()
-                    
+
                     phone.text = siteDetail?.phone
                     phone.changeNull()
                 }
