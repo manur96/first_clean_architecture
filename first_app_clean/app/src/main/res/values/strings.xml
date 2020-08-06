@@ -12,4 +12,6 @@
     <string name="starships">Starships</string>
     <string name="coordenadas">Coordinates:</string>
     <string name="datails">Details</string>
+    <string name="contact">Contact:</string>
+    <string name="semicolon">;</string>
 </resources>
