@@ -1,5 +1,6 @@
 package com.prueba.firstappclean.presenter
 
+import com.prueba.data.model.Site
 import com.prueba.firstappclean.error.ErrorHandler
 
 class SitesPresenter (view:View, errorHandler: ErrorHandler) : Presenter<SitesPresenter.View>(errorHandler = errorHandler, view = view) {
@@ -22,8 +23,12 @@ class SitesPresenter (view:View, errorHandler: ErrorHandler) : Presenter<SitesPr
 
     }
 
-    interface View : Presenter.View {
+    fun onSiteClicked(site: Site) {
+        view.navigateToDetail(site.id)
+    }
 
+    interface View : Presenter.View {
+        fun navigateToDetail(id: String)
     }
 
 }

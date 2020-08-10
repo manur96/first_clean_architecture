@@ -18,14 +18,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class PreviousSitesActivity : AppCompatActivity() {
 
-    private val adapter = SitesAdapter(
-            onDetailClick = {
-                val intent = Intent(this, SiteDetailActivity::class.java)
-                intent.putExtra("id", it.id)
-                startActivity(intent)
-            }
-    )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sites)

@@ -1,8 +1,10 @@
 package com.prueba.firstappclean.view.activity
 
+import android.content.Intent
 import android.view.View
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.presenter.SitesPresenter
+import com.prueba.firstappclean.view.adapter.SitesAdapter
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
@@ -25,12 +27,24 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
         }
     }
 
+    private val adapter = SitesAdapter(
+            onDetailClick = {
+                presenter.onSiteClicked(it)
+            }
+    )
+
     override fun initializeUI() {
         //nothing to do
     }
 
     override fun registerListeners() {
         //nothing to do
+    }
+
+    override fun navigateToDetail(id: String) {
+        val intent = Intent(this, SiteDetailActivity::class.java)
+        intent.putExtra("id", id)
+        startActivity(intent)
     }
 
 
