@@ -17,7 +17,7 @@ fun ImageView.load(url: String) {
 
 /**
  * View
- * */
+ */
 fun View.hideMe(gone: Boolean = true) {
     this.visibility = if (gone) View.GONE else View.INVISIBLE
 }

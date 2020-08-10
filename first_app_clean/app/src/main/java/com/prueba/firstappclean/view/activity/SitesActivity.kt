@@ -1,63 +1,37 @@
 package com.prueba.firstappclean.view.activity
 
-import android.content.Intent
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.prueba.data.datasource.network.api.SiteService
-import com.prueba.data.model.Data
+import android.view.View
 import com.prueba.firstappclean.R
-import com.prueba.firstappclean.view.adapter.SitesAdapter
-import kotlinx.android.synthetic.main.activity_sites.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.prueba.firstappclean.presenter.SitesPresenter
+import org.kodein.di.Kodein
+import org.kodein.di.generic.bind
+import org.kodein.di.generic.instance
+import org.kodein.di.generic.provider
 
+class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
+    override val progress: View
+        get() = TODO("Not yet implemented")
 
-class SitesActivity : AppCompatActivity() {
+    override val presenter: SitesPresenter by instance<SitesPresenter>()
 
-    private val adapter = SitesAdapter(
-            onDetailClick = {
-                val intent = Intent(this, SiteDetailActivity::class.java)
-                intent.putExtra("id", it.id)
-                startActivity(intent)
-            }
-    )
+    override val layoutResourceId: Int = R.layout.activity_sites
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sites)
-
-        sites.adapter = adapter
-        sites.layoutManager = LinearLayoutManager(this)
-
-        generateSites()
+    override val activityModule: Kodein.Module = Kodein.Module {
+        bind<SitesPresenter>() with provider {
+            SitesPresenter(
+                    view = this@SitesActivity,
+                    errorHandler = instance()
+            )
+        }
     }
 
-    private fun getRetrofit(): Retrofit {
-        return Retrofit.Builder()
-                .baseUrl("http://t21services.herokuapp.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
+    override fun initializeUI() {
+        //nothing to do
     }
 
-    private fun generateSites() {
-        val service = getRetrofit().create(SiteService::class.java)
-        service.getAllPoints().enqueue(object : Callback<Data> {
-            override fun onResponse(call: Call<Data>?, response: Response<Data>?) {
-                val data = response?.body()
-                if (data != null) {
-                    for (site in data.list) {
-                        adapter.add(site)
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<Data>, t: Throwable) {
-                t.printStackTrace()
-            }
-        })
+    override fun registerListeners() {
+        //nothing to do
     }
+
+
 }

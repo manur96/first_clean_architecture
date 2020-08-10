@@ -13,4 +13,6 @@
     <string name="starships">Naves espaciales</string>
     <string name="coordenadas">Coordenadas</string>
     <string name="datails">Detalles</string>
+    <string name="contact">"Contacto: "</string>
+    <string name="semicolon">;</string>
 </resources>
