@@ -1,12 +1,14 @@
 package com.prueba.firstappclean.di
 
 import android.content.Context
-import org.kodein.di.Kodein
 import com.prueba.domain.executor.Executor
+import com.prueba.domain.interactor.usecases.GetSitesUseCase
 import com.prueba.firstappclean.error.AndroidErrorHandler
 import com.prueba.firstappclean.error.ErrorHandler
 import com.prueba.firstappclean.executor.RxExecutor
+import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
+import org.kodein.di.generic.instance
 import org.kodein.di.generic.singleton
 
 /**
@@ -19,7 +21,7 @@ fun appModule(context: Context) = Kodein.Module("appModule") {
 }
 
 val domainModule = Kodein.Module("domainModule") {
-    // Add here data dependencies
+    bind() from singleton { GetSitesUseCase(executor = instance()) }
 }
 
 val dataModule = Kodein.Module("dataModule") {

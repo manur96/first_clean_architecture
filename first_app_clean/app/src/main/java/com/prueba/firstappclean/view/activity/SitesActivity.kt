@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.models.SiteView
 import com.prueba.firstappclean.presenter.SitesPresenter
-import com.prueba.firstappclean.view.adapter.PreviousSitesAdapter
 import com.prueba.firstappclean.view.adapter.SitesAdapter
 import kotlinx.android.synthetic.main.activity_sites.*
 import org.kodein.di.Kodein
@@ -25,13 +24,14 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
     override val activityModule: Kodein.Module = Kodein.Module {
         bind<SitesPresenter>() with provider {
             SitesPresenter(
+                    getSitesUseCase = instance(),
                     view = this@SitesActivity,
                     errorHandler = instance()
             )
         }
     }
 
-    private val adapter = SitesAdapter{
+    private val adapter = SitesAdapter {
         presenter.onSiteClicked(it)
     }
 

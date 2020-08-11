@@ -10,15 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="553d7367-e8d4-40ef-9d1a-f93c89e7202a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/models/SiteView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/PreviousSitesAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/RootAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/src/main/java/com/prueba/data/AndroidExtensions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/mappers/ViewMappers.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/prueba/domain/interactor/usecases/GetSitesUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/prueba/domain/models/Site.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/di/Modules.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/di/Modules.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/SitesPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/SitesPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/PreviousSitesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/PreviousSitesActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SitesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SitesActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/SitesAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/SitesAdapter.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +41,7 @@
       <list>
         <option value="valueResourceFile" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -59,6 +58,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA&#10;kotlin" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/data/src/main/java/com/prueba/data" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
@@ -68,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.prueba.domain.models" />
       <recent name="com.prueba.data.datasource.network.api" />
       <recent name="com.prueba.firstappclean.view.adapter" />
     </key>
@@ -79,7 +80,7 @@
       <recent name="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -138,6 +139,18 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Java Scratch.Scratch" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -189,13 +202,14 @@
     </state>
     <state x="245" y="168" key="#PSD/0.23.1440.821@0.23.1440.821" timestamp="1596793806152" />
     <state x="245" y="168" key="#PSD/0.23.1440.823@0.23.1440.823" timestamp="1596799445679" />
-    <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1597059089399">
-      <screen x="0" y="23" width="1440" height="823" />
+    <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1597141526239">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state x="499" y="151" key="#com.intellij.ide.util.MemberChooser/0.23.1440.816@0.23.1440.816" timestamp="1597056982391" />
     <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.821@0.23.1440.821" timestamp="1597056538839" />
     <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.822@0.23.1440.822" timestamp="1597057838871" />
-    <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1597059089399" />
+    <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1597140634803" />
+    <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.825@0.23.1440.825" timestamp="1597141526239" />
     <state x="458" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596706609180">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
@@ -205,30 +219,34 @@
     </state>
     <state x="575" y="289" key="AndroidCreateXmlResourceDialog/0.23.1440.823@0.23.1440.823" timestamp="1596624669901" />
     <state x="575" y="290" key="AndroidCreateXmlResourceDialog/0.23.1440.827@0.23.1440.827" timestamp="1596709446872" />
-    <state width="1398" height="106" key="GridCell.Tab.0.bottom" timestamp="1596788620957">
-      <screen x="0" y="23" width="1440" height="814" />
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1597144655320">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1398" height="106" key="GridCell.Tab.0.bottom/0.23.1440.814@0.23.1440.814" timestamp="1596788620957" />
     <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1596627003983" />
     <state width="1398" height="263" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1596701842554" />
-    <state width="1398" height="106" key="GridCell.Tab.0.center" timestamp="1596788620956">
-      <screen x="0" y="23" width="1440" height="814" />
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1597144655320" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1597144655319">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1398" height="106" key="GridCell.Tab.0.center/0.23.1440.814@0.23.1440.814" timestamp="1596788620956" />
     <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1596627003982" />
     <state width="1398" height="263" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1596701842552" />
-    <state width="1398" height="106" key="GridCell.Tab.0.left" timestamp="1596788620955">
-      <screen x="0" y="23" width="1440" height="814" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1597144655319" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1597144655319">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1398" height="106" key="GridCell.Tab.0.left/0.23.1440.814@0.23.1440.814" timestamp="1596788620955" />
     <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1596627003982" />
     <state width="1398" height="263" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1596701842550" />
-    <state width="1398" height="106" key="GridCell.Tab.0.right" timestamp="1596788620957">
-      <screen x="0" y="23" width="1440" height="814" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1597144655319" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1597144655319">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state width="1398" height="106" key="GridCell.Tab.0.right/0.23.1440.814@0.23.1440.814" timestamp="1596788620957" />
     <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1596627003983" />
     <state width="1398" height="263" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1596701842553" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1597144655319" />
     <state width="1398" height="263" key="GridCell.Tab.1.bottom" timestamp="1596701842555">
       <screen x="0" y="23" width="1440" height="823" />
     </state>
