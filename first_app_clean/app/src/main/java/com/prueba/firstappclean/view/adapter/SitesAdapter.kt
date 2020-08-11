@@ -1,47 +1,20 @@
 package com.prueba.firstappclean.view.adapter
 
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.prueba.data.model.Site
 import com.prueba.firstappclean.R
+import com.prueba.firstappclean.models.SiteView
 import kotlinx.android.synthetic.main.item_site.view.*
 
+class SitesAdapter (onSiteClick : (SiteView)->Unit) : RootAdapter<SiteView>(onItemClickListener = onSiteClick) {
 
-class SitesAdapter(
-        private val siteList: MutableList<Site> = mutableListOf(),
-        private val onDetailClick: (Site) -> Unit
-) :
-        RecyclerView.Adapter<SitesAdapter.SiteHolder>() {
+    override val itemLayoutId: Int = R.layout.item_site
 
-    override fun onBindViewHolder(holder: SiteHolder, position: Int) =
-            holder.bind(siteList[position])
+    override fun viewHolder(view: View): RootViewHolder<SiteView> = ViewHolder(view)
 
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SiteHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_site, parent, false)
-        return SiteHolder(itemView) { onDetailClick(siteList[it]) }
-    }
-
-    override fun getItemCount(): Int = siteList.size
-
-    fun add(site: Site) {
-        siteList.add(site)
-        notifyDataSetChanged()
-    }
-
-    class SiteHolder(
-            itemView: View,
-            private val onDetailClick: (Int) -> Unit = {}
-    ) : RecyclerView.ViewHolder(itemView) {
-        init {
-            itemView.details.setOnClickListener { onDetailClick(adapterPosition) }
-        }
-
-        fun bind(siteView: Site) {
-            itemView.title.text = siteView.title
-            itemView.geocoordinates.text = siteView.geocoordinates
+    class ViewHolder(view: View) : RootViewHolder<SiteView>(itemView = view) {
+        override fun bind(model: SiteView) {
+            itemView.title.text = model.title
+            itemView.geocoordinates.text = model.geocoordinates
         }
     }
 

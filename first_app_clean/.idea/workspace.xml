@@ -10,9 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="553d7367-e8d4-40ef-9d1a-f93c89e7202a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/models/SiteView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/PreviousSitesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/RootAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/src/main/java/com/prueba/data/AndroidExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/SitesPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/SitesPresenter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/PreviousSitesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/PreviousSitesActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SitesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SitesActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/SitesAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/SitesAdapter.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +59,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/values" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/src/main/java/com/prueba/data" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -66,6 +72,7 @@
       <recent name="com.prueba.firstappclean.view.adapter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/src/main/java/com/prueba/data" />
       <recent name="$PROJECT_DIR$/app/src/main/res/values" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/data/src/main/java/com/prueba/data/model" />
@@ -182,12 +189,13 @@
     </state>
     <state x="245" y="168" key="#PSD/0.23.1440.821@0.23.1440.821" timestamp="1596793806152" />
     <state x="245" y="168" key="#PSD/0.23.1440.823@0.23.1440.823" timestamp="1596799445679" />
-    <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1597057838871">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1597059089399">
+      <screen x="0" y="23" width="1440" height="823" />
     </state>
     <state x="499" y="151" key="#com.intellij.ide.util.MemberChooser/0.23.1440.816@0.23.1440.816" timestamp="1597056982391" />
     <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.821@0.23.1440.821" timestamp="1597056538839" />
     <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.822@0.23.1440.822" timestamp="1597057838871" />
+    <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1597059089399" />
     <state x="458" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596706609180">
       <screen x="0" y="23" width="1440" height="825" />
     </state>
@@ -245,11 +253,12 @@
     <state width="1398" height="263" key="GridCell.Tab.1.right/0.23.1440.814@0.23.1440.814" timestamp="1596627230483" />
     <state width="1398" height="263" key="GridCell.Tab.1.right/0.23.1440.822@0.23.1440.822" timestamp="1596626949727" />
     <state width="1398" height="263" key="GridCell.Tab.1.right/0.23.1440.823@0.23.1440.823" timestamp="1596701842555" />
-    <state x="390" y="266" key="com.intellij.ide.util.TipDialog" timestamp="1597044954423">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="390" y="266" key="com.intellij.ide.util.TipDialog" timestamp="1597131149188">
+      <screen x="0" y="23" width="1440" height="823" />
     </state>
     <state x="390" y="264" key="com.intellij.ide.util.TipDialog/0.23.1440.814@0.23.1440.814" timestamp="1596785579590" />
     <state x="390" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.821@0.23.1440.821" timestamp="1597044954423" />
     <state x="390" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.822@0.23.1440.822" timestamp="1596699214327" />
+    <state x="390" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.823@0.23.1440.823" timestamp="1597131149188" />
   </component>
 </project>

@@ -2,9 +2,13 @@ package com.prueba.firstappclean.view.activity
 
 import android.content.Intent
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.prueba.firstappclean.R
+import com.prueba.firstappclean.models.SiteView
 import com.prueba.firstappclean.presenter.SitesPresenter
+import com.prueba.firstappclean.view.adapter.PreviousSitesAdapter
 import com.prueba.firstappclean.view.adapter.SitesAdapter
+import kotlinx.android.synthetic.main.activity_sites.*
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
@@ -27,14 +31,13 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
         }
     }
 
-    private val adapter = SitesAdapter(
-            onDetailClick = {
-                presenter.onSiteClicked(it)
-            }
-    )
+    private val adapter = SitesAdapter{
+        presenter.onSiteClicked(it)
+    }
 
     override fun initializeUI() {
-        //nothing to do
+        sites.adapter = adapter
+        sites.layoutManager = LinearLayoutManager(this)
     }
 
     override fun registerListeners() {
@@ -47,5 +50,8 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
         startActivity(intent)
     }
 
+    override fun showSites(sites: List<SiteView>) {
+        adapter.addAll(sites.toMutableList())
+    }
 
 }

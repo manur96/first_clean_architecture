@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.prueba.data.datasource.network.api.SiteService
 import com.prueba.data.model.Data
 import com.prueba.firstappclean.R
-import com.prueba.firstappclean.view.adapter.SitesAdapter
+import com.prueba.firstappclean.view.adapter.PreviousSitesAdapter
 import kotlinx.android.synthetic.main.activity_sites.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,6 +17,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class PreviousSitesActivity : AppCompatActivity() {
+
+    private val adapter = PreviousSitesAdapter(
+            onDetailClick = {
+                val intent = Intent(this, SiteDetailActivity::class.java)
+                intent.putExtra("id", it.id)
+                startActivity(intent)
+            }
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
