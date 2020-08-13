@@ -3,10 +3,11 @@ package com.prueba.domain.interactor.usecases
 import com.prueba.domain.executor.Executor
 import com.prueba.domain.interactor.SingleInteractor
 import com.prueba.domain.models.Site
+import com.prueba.domain.repository.Repository
 
-class GetSitesUseCase(executor: Executor) : SingleInteractor<List<Site>>(executor = executor) {
+class GetSitesUseCase(private val repository: Repository, executor: Executor) : SingleInteractor<List<Site>>(executor = executor) {
 
     fun execute(onSuccess: (List<Site>) -> Unit, onError: (Throwable) -> Unit) {
-        //Call to repository
+        super.execute(onSuccess, onError, repository.getAllSites())
     }
 }

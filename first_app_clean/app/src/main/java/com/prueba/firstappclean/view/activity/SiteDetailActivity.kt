@@ -2,8 +2,7 @@ package com.prueba.firstappclean.view.activity
 
 import android.app.Activity
 import android.os.Bundle
-import com.prueba.data.datasource.network.api.SiteService
-import com.prueba.data.model.SiteDetail
+import com.prueba.data.datasource.network.SiteService
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.extension.changeNull
 import kotlinx.android.synthetic.main.activity_site_detail.*
@@ -19,7 +18,7 @@ class SiteDetailActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_site_detail)
 
-        getSiteById()
+        //getSiteById()
     }
 
     private fun getRetrofit(): Retrofit {
@@ -29,7 +28,7 @@ class SiteDetailActivity : Activity() {
                 .build()
     }
 
-    private fun getSiteById() {
+    /*private fun getSiteById() {
         val service = getRetrofit().create(SiteService::class.java)
         val id = intent.getStringExtra("id")
         if (id != null) {
@@ -64,6 +63,6 @@ class SiteDetailActivity : Activity() {
                 }
             })
         }
-    }
+    }*/
 
 }

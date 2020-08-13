@@ -1,8 +1,14 @@
 package com.prueba.firstappclean.di
 
 import android.content.Context
+import com.prueba.data.datasource.network.AppNetwork
+import com.prueba.data.datasource.network.Network
+import com.prueba.data.datasource.network.SiteService
+import com.prueba.data.datasource.network.createService
+import com.prueba.data.repository.AppRepository
 import com.prueba.domain.executor.Executor
 import com.prueba.domain.interactor.usecases.GetSitesUseCase
+import com.prueba.domain.repository.Repository
 import com.prueba.firstappclean.error.AndroidErrorHandler
 import com.prueba.firstappclean.error.ErrorHandler
 import com.prueba.firstappclean.executor.RxExecutor
@@ -21,9 +27,11 @@ fun appModule(context: Context) = Kodein.Module("appModule") {
 }
 
 val domainModule = Kodein.Module("domainModule") {
-    bind() from singleton { GetSitesUseCase(executor = instance()) }
+    bind() from singleton { GetSitesUseCase(executor = instance(), repository = instance()) }
 }
 
 val dataModule = Kodein.Module("dataModule") {
-    // Add here data dependencies
+    bind<Repository>() with singleton { AppRepository(network = instance()) }
+    bind<Network>() with singleton { AppNetwork(siteService = instance()) }
+    bind<SiteService>() with singleton { createService<SiteService>(endPoint = "http://t21services.herokuapp.com/") }
 }

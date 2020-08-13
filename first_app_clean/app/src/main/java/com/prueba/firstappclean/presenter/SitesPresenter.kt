@@ -5,7 +5,9 @@ import com.prueba.firstappclean.error.ErrorHandler
 import com.prueba.firstappclean.mappers.toSiteView
 import com.prueba.firstappclean.models.SiteView
 
-class SitesPresenter(private val getSitesUseCase: GetSitesUseCase, view: View, errorHandler: ErrorHandler) : Presenter<SitesPresenter.View>(errorHandler = errorHandler, view = view) {
+class SitesPresenter(private val getSitesUseCase: GetSitesUseCase,
+                     view: View,
+                     errorHandler: ErrorHandler) : Presenter<SitesPresenter.View>(errorHandler = errorHandler, view = view) {
 
     override fun initialize() {
         getSitesUseCase.execute(
