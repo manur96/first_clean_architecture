@@ -1,68 +1,50 @@
 package com.prueba.firstappclean.view.activity
 
-import android.app.Activity
-import android.os.Bundle
-import com.prueba.data.datasource.network.SiteService
+import android.view.View
 import com.prueba.firstappclean.R
-import com.prueba.firstappclean.extension.changeNull
+import com.prueba.firstappclean.models.SiteDetailView
+import com.prueba.firstappclean.presenter.SiteDetailPresenter
 import kotlinx.android.synthetic.main.activity_site_detail.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import org.kodein.di.Kodein
+import org.kodein.di.generic.bind
+import org.kodein.di.generic.instance
+import org.kodein.di.generic.provider
 
-class SiteDetailActivity : Activity() {
+class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailPresenter.View {
+    override val progress: View
+        get() = TODO("Not yet implemented")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_site_detail)
+    override val presenter: SiteDetailPresenter by instance<SiteDetailPresenter>()
 
-        //getSiteById()
-    }
+    override val layoutResourceId: Int = R.layout.activity_site_detail
 
-    private fun getRetrofit(): Retrofit {
-        return Retrofit.Builder()
-                .baseUrl("http://t21services.herokuapp.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-    }
-
-    /*private fun getSiteById() {
-        val service = getRetrofit().create(SiteService::class.java)
-        val id = intent.getStringExtra("id")
-        if (id != null) {
-            service.getPointById(id).enqueue(object : Callback<SiteDetail> {
-                override fun onResponse(call: Call<SiteDetail>?, response: Response<SiteDetail>?) {
-                    val siteDetail = response?.body()
-
-                    titleDetail.text = siteDetail?.title
-                    titleDetail.changeNull()
-
-                    addres.text = siteDetail?.address
-                    addres.changeNull()
-
-                    transport.text = siteDetail?.transport
-                    transport.changeNull()
-
-                    email.text = siteDetail?.email
-                    email.changeNull()
-
-                    geocoordinatesDetail.text = siteDetail?.geocoordinates
-                    geocoordinatesDetail.changeNull()
-
-                    description.text = siteDetail?.description
-                    description.changeNull()
-
-                    phone.text = siteDetail?.phone
-                    phone.changeNull()
-                }
-
-                override fun onFailure(call: Call<SiteDetail>, t: Throwable) {
-                    t.printStackTrace()
-                }
-            })
+    override val activityModule: Kodein.Module = Kodein.Module {
+        bind<SiteDetailPresenter>() with provider {
+            SiteDetailPresenter(
+                    getSiteDetailUseCase = instance(),
+                    view = this@SiteDetailActivity,
+                    errorHandler = instance()
+            )
         }
-    }*/
+    }
+
+    override fun initializeUI() {
+        //Creo que nothing to do
+    }
+
+    override fun registerListeners() {
+        presenter.onDetailClick(intent.getStringExtra("id"))
+    }
+
+    override fun showDetail(siteDetail: SiteDetailView) {
+        titleDetail.text = siteDetail.title
+        addres.text = siteDetail.address
+        transport.text = siteDetail.transport
+        email.text = siteDetail.email
+        geocoordinatesDetail.text = siteDetail.geocoordinates
+        description.text = siteDetail.description
+        phone.text = siteDetail.phone
+    }
+
 
 }

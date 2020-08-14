@@ -6,7 +6,6 @@ import com.prueba.domain.models.Site
 import com.prueba.domain.repository.Repository
 
 class GetSitesUseCase(private val repository: Repository, executor: Executor) : SingleInteractor<List<Site>>(executor = executor) {
-
     fun execute(onSuccess: (List<Site>) -> Unit, onError: (Throwable) -> Unit) {
         super.execute(onSuccess, onError, repository.getAllSites())
     }

@@ -7,6 +7,7 @@ import com.prueba.data.datasource.network.SiteService
 import com.prueba.data.datasource.network.createService
 import com.prueba.data.repository.AppRepository
 import com.prueba.domain.executor.Executor
+import com.prueba.domain.interactor.usecases.GetSiteDetailUseCase
 import com.prueba.domain.interactor.usecases.GetSitesUseCase
 import com.prueba.domain.repository.Repository
 import com.prueba.firstappclean.error.AndroidErrorHandler
@@ -28,6 +29,7 @@ fun appModule(context: Context) = Kodein.Module("appModule") {
 
 val domainModule = Kodein.Module("domainModule") {
     bind() from singleton { GetSitesUseCase(executor = instance(), repository = instance()) }
+    bind() from singleton { GetSiteDetailUseCase(executor = instance(), repository = instance())}
 }
 
 val dataModule = Kodein.Module("dataModule") {
