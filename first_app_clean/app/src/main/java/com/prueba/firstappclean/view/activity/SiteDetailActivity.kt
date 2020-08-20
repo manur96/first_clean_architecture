@@ -1,18 +1,23 @@
 package com.prueba.firstappclean.view.activity
 
+import android.preference.PreferenceManager
 import android.view.View
+import android.widget.Toast
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.models.SiteDetailView
+import com.prueba.firstappclean.models.SiteView
 import com.prueba.firstappclean.presenter.SiteDetailPresenter
+import com.prueba.firstappclean.view.adapter.SitesAdapter
 import kotlinx.android.synthetic.main.activity_site_detail.*
+import kotlinx.android.synthetic.main.view_progress.*
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
 
 class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailPresenter.View {
-    override val progress: View
-        get() = TODO("Not yet implemented")
+
+    override val progress: View by lazy { progressView }
 
     override val presenter: SiteDetailPresenter by instance<SiteDetailPresenter>()
 
@@ -28,12 +33,20 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
         }
     }
 
+    private val adapter = SitesAdapter {
+        presenter.onFavClicked(it)
+    }
+
     override fun initializeUI() {
-        //Creo que nothing to do
+        //nothing to do
     }
 
     override fun registerListeners() {
-        presenter.onDetailClick(intent.getStringExtra("id"))
+        //nothing to do
+    }
+
+    override fun getId(): String {
+        return intent.getStringExtra("id")
     }
 
     override fun showDetail(siteDetail: SiteDetailView) {
@@ -46,5 +59,15 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
         phone.text = siteDetail.phone
     }
 
+    override fun addToFavorites(site: SiteView) {
+        site.fav = true
+
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        sharedPreferences.edit().putString("ID_SITE_KEY", site.id).apply()
+        sharedPreferences.edit().putString("TITLE_SITE_KEY", site.title).apply()
+        sharedPreferences.edit().putString("GEO_SITE_KEY", site.geocoordinates).apply()
+
+        Toast.makeText(this, "Sitio guardado en favoritos", Toast.LENGTH_SHORT)
+    }
 
 }

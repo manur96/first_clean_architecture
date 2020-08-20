@@ -112,6 +112,14 @@
                 app:layout_constraintTop_toBottomOf="@id/email"
                 tools:text="Teléfono" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phone"
+                android:layout_marginTop="20dp"
+                android:text="Añadir a favoritos"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

@@ -8,14 +8,15 @@ import com.prueba.firstappclean.models.SiteView
 import com.prueba.firstappclean.presenter.SitesPresenter
 import com.prueba.firstappclean.view.adapter.SitesAdapter
 import kotlinx.android.synthetic.main.activity_sites.*
+import kotlinx.android.synthetic.main.view_progress.*
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
 
 class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
-    override val progress: View
-        get() = TODO("Not yet implemented")
+
+    override val progress: View by lazy { progressView }
 
     override val presenter: SitesPresenter by instance<SitesPresenter>()
 
@@ -52,6 +53,12 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
 
     override fun showSites(sites: List<SiteView>) {
         adapter.addAll(sites.toMutableList())
+    }
+
+    override fun favFilter(sites: List<SiteView>) {
+        fab.setOnClickListener{
+            adapter.addFav(sites.toMutableList())
+        }
     }
 
 }
