@@ -1,6 +1,7 @@
 package com.prueba.firstappclean.view.activity
 
 import android.content.Intent
+import android.graphics.Color
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,7 +45,10 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
 
     override fun registerListeners() {
         fabFavorites.setOnClickListener {
-            presenter.onFavClicked()
+            if (presenter.onFavClicked())
+                fabFavorites.setBackgroundColor(Color.parseColor("#EEEE2E"))
+            else
+                fabFavorites.setBackgroundColor((Color.parseColor("#03DAC5")))
         }
     }
 

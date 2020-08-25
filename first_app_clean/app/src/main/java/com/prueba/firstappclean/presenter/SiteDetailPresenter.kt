@@ -24,6 +24,7 @@ class SiteDetailPresenter(
                 onSuccess = {
                     site = it
                     view.showDetail(site.toSiteDetailView())
+                    view.hideFavButton(site.isFav)
                     view.hideProgress()
                 },
                 onError = {
@@ -51,7 +52,6 @@ class SiteDetailPresenter(
                 id = id,
                 onComplete = {
                     site.isFav = !site.isFav
-                    view.updateFavColor(site.isFav)
                 },
                 onError = {
                     view.showError("No se ha podido guardar")
@@ -63,6 +63,6 @@ class SiteDetailPresenter(
 
         fun getId(): String
 
-        fun updateFavColor(isFav: Boolean)
+        fun hideFavButton(isFav: Boolean)
     }
 }

@@ -13,32 +13,35 @@ class AppRepository(private val network: Network, private val settings: Settings
     override fun getAllSites(onlyFavourites: Boolean): Single<List<Site>> {
         val networkResponse = network.getAllPoints()
 
-        val favoriteSites =  if(settings.hasFavorites()){
+        val favoriteSites = if (settings.hasFavorites()) {
             settings.getFavorites()
         } else {
             listOf()
         }
 
-        return if(onlyFavourites){
-            networkResponse.map { list -> list
+        return if (onlyFavourites) {
+            networkResponse.map { list ->
+                list
                         .filter { site -> site.id in favoriteSites }
                         .map {
                             it.fav = true
                             it
-            } }
+                        }
+            }
         } else {
-            networkResponse.map { list -> list
-                    .map {
-                        site ->  site.fav  = site.id in favoriteSites
-                        site
-                    }
+            networkResponse.map { list ->
+                list
+                        .map { site ->
+                            site.fav = site.id in favoriteSites
+                            site
+                        }
             }
         }
     }
 
     override fun getSiteById(id: String): Single<SiteDetail> = network.getPointById(id)
 
-    override fun addSiteToFavorites(id: String): Completable = settings.addToFavorite(idSite = id) //SharedPreference = lista
+    override fun addSiteToFavorites(id: String): Completable = settings.addToFavorite(idSite = id)
 
 }
 

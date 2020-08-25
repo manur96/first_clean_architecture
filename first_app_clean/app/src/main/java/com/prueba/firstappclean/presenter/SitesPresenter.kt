@@ -43,7 +43,7 @@ class SitesPresenter(
         view.navigateToDetail(site.id)
     }
 
-    fun onFavClicked() {
+    fun onFavClicked() : Boolean {
         filter = !filter
         getSitesUseCase.execute(
                 filter = filter,
@@ -54,6 +54,7 @@ class SitesPresenter(
                     view.showErrorDialog()
                 }
         )
+        return filter
     }
 
     interface View : Presenter.View {

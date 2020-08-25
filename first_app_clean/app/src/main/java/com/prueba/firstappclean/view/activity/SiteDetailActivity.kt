@@ -2,6 +2,7 @@ package com.prueba.firstappclean.view.activity
 
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.isVisible
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.models.SiteDetailView
 import com.prueba.firstappclean.presenter.SiteDetailPresenter
@@ -45,8 +46,9 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
         return intent.getStringExtra("id")
     }
 
-    override fun updateFavColor(isFav: Boolean) {
-
+    override fun hideFavButton(isFav: Boolean) {
+        if (isFav)
+            addToFavorites.isVisible = false
     }
 
     override fun showDetail(siteDetail: SiteDetailView) {
