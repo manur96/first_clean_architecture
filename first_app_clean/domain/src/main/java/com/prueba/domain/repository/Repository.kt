@@ -11,7 +11,7 @@ import io.reactivex.Single
  */
 
 interface Repository {
-    fun getAllSites(filter: Boolean): Single<List<Site>>
+    fun getAllSites(onlyFavourites: Boolean): Single<List<Site>>
     fun getSiteById(id: String): Single<SiteDetail>
     fun addSiteToFavorites(id: String): Completable
 }

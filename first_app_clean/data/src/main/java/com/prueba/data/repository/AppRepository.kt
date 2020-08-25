@@ -9,18 +9,36 @@ import io.reactivex.Completable
 import io.reactivex.Single
 
 class AppRepository(private val network: Network, private val settings: Settings) : Repository {
-    override fun getAllSites(filter: Boolean): Single<List<Site>> {
-        var sites = network.getAllPoints()
-        if (filter) {
-            sites = sites.map { sites ->
-                val favoriteSites = settings.getFavorites()
-                sites.filter { site -> favoriteSites.contains(site.id) }
+
+    override fun getAllSites(onlyFavourites: Boolean): Single<List<Site>> {
+        val networkResponse = network.getAllPoints()
+
+        val favoriteSites =  if(settings.hasFavorites()){
+            settings.getFavorites()
+        } else {
+            listOf()
+        }
+
+        return if(onlyFavourites){
+            networkResponse.map { list -> list
+                        .filter { site -> site.id in favoriteSites }
+                        .map {
+                            it.fav = true
+                            it
+            } }
+        } else {
+            networkResponse.map { list -> list
+                    .map {
+                        site ->  site.fav  = site.id in favoriteSites
+                        site
+                    }
             }
         }
-        return sites
     }
 
-
     override fun getSiteById(id: String): Single<SiteDetail> = network.getPointById(id)
+
     override fun addSiteToFavorites(id: String): Completable = settings.addToFavorite(idSite = id) //SharedPreference = lista
+
 }
+

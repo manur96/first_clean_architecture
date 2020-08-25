@@ -55,7 +55,7 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
     }
 
     override fun showSites(sites: List<SiteView>) {
-        adapter.addAll(sites.toMutableList())
+        adapter.replace(sites.toMutableList())
     }
 
     override fun showErrorDialog() {

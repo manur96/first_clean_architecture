@@ -41,5 +41,5 @@ val dataModule = Kodein.Module("dataModule") {
     bind<Repository>() with singleton { AppRepository(network = instance(), settings = instance()) }
     bind<Network>() with singleton { AppNetwork(siteService = instance()) }
     bind<Settings>() with singleton { AppSettings(context = instance(), name = "first_app_clean") }
-    bind<SiteService>() with singleton { createService<SiteService>(endPoint = "http://t21services.herokuapp.com/") }
+    bind<SiteService>() with singleton { createService<SiteService>(endPoint = "https://t21services.herokuapp.com/") }
 }

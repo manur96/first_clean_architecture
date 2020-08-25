@@ -8,7 +8,8 @@ import com.prueba.firstappclean.models.SiteView
 fun Site.toSiteView(): SiteView = SiteView(
         id = id,
         title = title,
-        geocoordinates = geocoordinates
+        geocoordinates = geocoordinates,
+        fav = fav
 )
 
 fun SiteDetail.toSiteDetailView(): SiteDetailView = SiteDetailView(

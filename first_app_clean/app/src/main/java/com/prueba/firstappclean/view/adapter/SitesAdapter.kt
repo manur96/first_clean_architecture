@@ -14,7 +14,7 @@ class SitesAdapter (onSiteClick : (SiteView)->Unit) : RootAdapter<SiteView>(onIt
 
     class ViewHolder(view: View) : RootViewHolder<SiteView>(itemView = view) {
         override fun bind(model: SiteView) {
-            itemView.title.text = model.title
+            itemView.title.text = "${if(model.fav) "FAV - " else ""} ${model.title}"
             itemView.geocoordinates.text = model.geocoordinates
         }
     }

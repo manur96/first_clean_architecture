@@ -23,7 +23,7 @@ class PreviousSiteDetailActivity : Activity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-                .baseUrl("http://t21services.herokuapp.com/")
+                .baseUrl("https://t21services.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
     }
