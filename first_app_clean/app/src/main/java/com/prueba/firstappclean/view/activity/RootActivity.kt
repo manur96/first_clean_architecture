@@ -3,6 +3,7 @@ package com.prueba.firstappclean.view.activity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.prueba.firstappclean.extension.hideMe
 import com.prueba.firstappclean.extension.showMe
@@ -70,4 +71,5 @@ abstract class RootActivity<out V : Presenter.View> : AppCompatActivity(), Kodei
     override fun showProgress() = progress.showMe()
 
     override fun hideProgress() = progress.hideMe()
+    
 }

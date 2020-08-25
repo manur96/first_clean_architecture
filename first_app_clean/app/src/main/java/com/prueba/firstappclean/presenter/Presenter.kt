@@ -1,5 +1,6 @@
 package com.prueba.firstappclean.presenter
 
+import androidx.appcompat.app.AlertDialog
 import com.prueba.firstappclean.error.ErrorHandler
 
 /**
@@ -24,6 +25,7 @@ abstract class Presenter<out V : Presenter.View>(protected val errorHandler: Err
         callback(message)
     }
 
+
     interface View {
         fun showProgress()
 
@@ -36,5 +38,7 @@ abstract class Presenter<out V : Presenter.View>(protected val errorHandler: Err
         fun showMessage(message: String)
 
         fun showMessage(messageId: Int)
+
+        fun showErrorDialog()
     }
 }

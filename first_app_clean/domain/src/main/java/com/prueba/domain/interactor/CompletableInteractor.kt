@@ -36,4 +36,5 @@ abstract class CompletableInteractor(private val executor: Executor,
     fun clear() {
         compositeDisposable.clear()
     }
+
 }

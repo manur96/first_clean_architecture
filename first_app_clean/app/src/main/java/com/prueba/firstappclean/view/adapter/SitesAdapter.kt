@@ -12,14 +12,6 @@ class SitesAdapter (onSiteClick : (SiteView)->Unit) : RootAdapter<SiteView>(onIt
 
     override fun viewHolder(view: View): RootViewHolder<SiteView> = ViewHolder(view)
 
-    fun addFav(sites: List<SiteView>){
-        for (item in sites){
-            if (item.fav){
-                this.add(item)
-            }
-        }
-    }
-
     class ViewHolder(view: View) : RootViewHolder<SiteView>(itemView = view) {
         override fun bind(model: SiteView) {
             itemView.title.text = model.title

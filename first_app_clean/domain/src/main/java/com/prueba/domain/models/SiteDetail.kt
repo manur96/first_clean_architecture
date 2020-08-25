@@ -8,5 +8,6 @@ data class SiteDetail(
         val id: String,
         val phone: String,
         val title: String,
-        val transport: String
+        val transport: String,
+        var isFav: Boolean = false
 )

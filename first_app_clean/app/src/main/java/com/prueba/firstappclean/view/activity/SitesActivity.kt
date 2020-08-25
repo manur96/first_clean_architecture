@@ -2,6 +2,7 @@ package com.prueba.firstappclean.view.activity
 
 import android.content.Intent
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.models.SiteView
@@ -22,7 +23,7 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
 
     override val layoutResourceId: Int = R.layout.activity_sites
 
-    override val activityModule: Kodein.Module = Kodein.Module {
+    override val activityModule: Kodein.Module = Kodein.Module("App") {
         bind<SitesPresenter>() with provider {
             SitesPresenter(
                     getSitesUseCase = instance(),
@@ -42,7 +43,9 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
     }
 
     override fun registerListeners() {
-        //nothing to do
+        fabFavorites.setOnClickListener {
+            presenter.onFavClicked()
+        }
     }
 
     override fun navigateToDetail(id: String) {
@@ -55,10 +58,10 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
         adapter.addAll(sites.toMutableList())
     }
 
-    override fun favFilter(sites: List<SiteView>) {
-        fab.setOnClickListener{
-            adapter.addFav(sites.toMutableList())
-        }
+    override fun showErrorDialog() {
+        AlertDialog.Builder(this).setTitle("Error")
+                .setMessage("No se han podido cargar los sitios correctamente")
+                .show()
     }
 
 }
