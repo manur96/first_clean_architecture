@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="greyBack">#CFCFCF</color>
+    <color name="favSiteColor">#0060CD</color>
+    <color name="changeColorFAB">#EEEE2E</color>
 </resources>

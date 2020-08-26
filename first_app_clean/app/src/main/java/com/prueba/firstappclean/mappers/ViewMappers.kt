@@ -20,5 +20,6 @@ fun SiteDetail.toSiteDetailView(): SiteDetailView = SiteDetailView(
         email = email,
         geocoordinates = geocoordinates,
         phone = phone,
-        transport = transport
+        transport = transport,
+        isFav = isFav
 )

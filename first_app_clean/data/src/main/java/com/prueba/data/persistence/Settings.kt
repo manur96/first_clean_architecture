@@ -1,6 +1,5 @@
 package com.prueba.data.persistence
 
-import com.prueba.domain.models.SiteDetail
 import io.reactivex.Completable
 
 interface Settings {

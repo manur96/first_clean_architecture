@@ -47,11 +47,12 @@ class SiteDetailPresenter(
     }
 
     fun onFavClicked() {
-        view.showProgress()
         addSiteToFavoriteUseCase.execute(
                 id = id,
                 onComplete = {
                     site.isFav = !site.isFav
+                    view.showMessage("Sitio añadido a favorito")
+                    view.hideFavButton(site.isFav)
                 },
                 onError = {
                     view.showError("No se ha podido guardar")

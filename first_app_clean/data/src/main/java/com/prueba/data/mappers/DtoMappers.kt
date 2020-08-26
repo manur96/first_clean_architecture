@@ -11,13 +11,15 @@ fun SiteDto.toModel(): Site = Site(
         geocoordinates = geocoordinates
 )
 
-fun SiteDetailResponseDto.toModel(): SiteDetail = SiteDetail(
-        id = id,
-        title = title,
-        geocoordinates = geocoordinates,
-        address = address,
-        description = description,
-        email = email,
-        phone = phone,
-        transport = transport
-)
+fun SiteDetailResponseDto.toModel(): SiteDetail {
+    return SiteDetail(
+            id = id,
+            title = title,
+            geocoordinates = geocoordinates,
+            address = address,
+            description = description,
+            email = email,
+            phone = phone,
+            transport = transport
+    )
+}

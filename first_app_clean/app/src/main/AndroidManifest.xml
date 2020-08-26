@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.SiteDetailActivity" />
+        <activity android:name=".view.activity.SiteDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.activity.SitesActivity" />
+        </activity>
 
     </application>
 </manifest>

@@ -33,7 +33,7 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
     }
 
     override fun initializeUI() {
-        //nothing to do
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun registerListeners() {

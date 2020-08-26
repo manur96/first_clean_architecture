@@ -1,6 +1,7 @@
 package com.prueba.firstappclean.view.activity
 
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.View
 import androidx.appcompat.app.AlertDialog
@@ -15,6 +16,7 @@ import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
+
 
 class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
 
@@ -45,10 +47,13 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
 
     override fun registerListeners() {
         fabFavorites.setOnClickListener {
-            if (presenter.onFavClicked())
-                fabFavorites.setBackgroundColor(Color.parseColor("#EEEE2E"))
-            else
-                fabFavorites.setBackgroundColor((Color.parseColor("#03DAC5")))
+            if (presenter.onFavClicked()) {
+                fabFavorites.rippleColor = Color.parseColor("#EEEE2E")
+                fabFavorites.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#EEEE2E"))
+            } else {
+                fabFavorites.rippleColor = Color.parseColor("#03DAC5")
+                fabFavorites.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#03DAC5"))
+            }
         }
     }
 
