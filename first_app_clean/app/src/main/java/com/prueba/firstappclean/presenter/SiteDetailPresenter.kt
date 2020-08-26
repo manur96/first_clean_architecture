@@ -2,12 +2,14 @@ package com.prueba.firstappclean.presenter
 
 import com.prueba.domain.interactor.usecases.AddSiteToFavoriteUseCase
 import com.prueba.domain.interactor.usecases.GetSiteDetailUseCase
+import com.prueba.domain.interactor.usecases.RemoveSiteFromFavoriteUseCase
 import com.prueba.domain.models.SiteDetail
 import com.prueba.firstappclean.error.ErrorHandler
 import com.prueba.firstappclean.mappers.toSiteDetailView
 import com.prueba.firstappclean.models.SiteDetailView
 
 class SiteDetailPresenter(
+        private val removeSiteFromFavoriteUseCase: RemoveSiteFromFavoriteUseCase,
         private val addSiteToFavoriteUseCase: AddSiteToFavoriteUseCase,
         private val getSiteDetailUseCase: GetSiteDetailUseCase,
         view: View,
@@ -24,7 +26,7 @@ class SiteDetailPresenter(
                 onSuccess = {
                     site = it
                     view.showDetail(site.toSiteDetailView())
-                    view.hideFavButton(site.isFav)
+                    view.showRemoveFavButton(site.isFav)
                     view.hideProgress()
                 },
                 onError = {
@@ -52,11 +54,25 @@ class SiteDetailPresenter(
                 onComplete = {
                     site.isFav = !site.isFav
                     view.showMessage("Sitio añadido a favorito")
-                    view.hideFavButton(site.isFav)
+                    view.showRemoveFavButton(site.isFav)
                 },
                 onError = {
                     view.showError("No se ha podido guardar")
                 })
+    }
+
+    fun onRemoveClicked() {
+        removeSiteFromFavoriteUseCase.execute(
+                id = id,
+                onComplete = {
+                    site.isFav = !site.isFav
+                    view.showMessage("Sitio quitado de favoritos")
+                    view.showRemoveFavButton(site.isFav)
+                },
+                onError = {
+                    view.showError("No se ha podido eliminar")
+                }
+        )
     }
 
     interface View : Presenter.View {
@@ -64,6 +80,6 @@ class SiteDetailPresenter(
 
         fun getId(): String
 
-        fun hideFavButton(isFav: Boolean)
+        fun showRemoveFavButton(isFav: Boolean)
     }
 }

@@ -14,4 +14,5 @@ interface Repository {
     fun getAllSites(onlyFavourites: Boolean): Single<List<Site>>
     fun getSiteById(id: String): Single<SiteDetail>
     fun addSiteToFavorites(id: String): Completable
+    fun removeSiteFromFavorites(id: String): Completable
 }

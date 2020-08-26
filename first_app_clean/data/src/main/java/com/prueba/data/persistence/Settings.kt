@@ -4,6 +4,7 @@ import io.reactivex.Completable
 
 interface Settings {
     fun addToFavorite(idSite: String): Completable
+    fun removeFromFavorite(idSite: String): Completable
     fun hasFavorites(): Boolean
     fun getFavorites(): List<String>
 }

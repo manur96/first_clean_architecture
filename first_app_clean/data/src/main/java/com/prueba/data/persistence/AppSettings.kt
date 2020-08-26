@@ -25,6 +25,23 @@ class AppSettings(context: Context, name: String) : Settings {
         return Completable.complete()
     }
 
+    override fun removeFromFavorite(idSite: String): Completable {
+        //sharedPreferences.edit().remove(idSite).apply()
+        val favSites = getFavorites().toMutableList()
+        if (favSites.contains(idSite))
+            favSites.remove(idSite)
+/*        for (id in getFavorites()) {
+            if (id == idSite) {
+                favSites.remove(idSite)
+            }
+        }*/
+
+        val sitesJson: String = Gson().toJson(favSites)
+        sharedPreferences.edit().putString(ID_SITE_KEY, sitesJson).apply()
+
+        return Completable.complete()
+    }
+
     override fun hasFavorites(): Boolean {
         return sharedPreferences.contains(ID_SITE_KEY)
     }

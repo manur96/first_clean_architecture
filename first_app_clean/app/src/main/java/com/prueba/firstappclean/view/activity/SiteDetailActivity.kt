@@ -24,6 +24,7 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
     override val activityModule: Kodein.Module = Kodein.Module("App") {
         bind<SiteDetailPresenter>() with provider {
             SiteDetailPresenter(
+                    removeSiteFromFavoriteUseCase = instance(),
                     addSiteToFavoriteUseCase = instance(),
                     getSiteDetailUseCase = instance(),
                     view = this@SiteDetailActivity,
@@ -40,15 +41,18 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
         addToFavorites.setOnClickListener {
             presenter.onFavClicked()
         }
+        removeToFavorites.setOnClickListener {
+            presenter.onRemoveClicked()
+        }
     }
 
     override fun getId(): String {
         return intent.getStringExtra("id")
     }
 
-    override fun hideFavButton(isFav: Boolean) {
-        if (isFav)
-            addToFavorites.isVisible = false
+    override fun showRemoveFavButton(isFav: Boolean) {
+        addToFavorites.isVisible = !isFav
+        removeToFavorites.isVisible = isFav
     }
 
     override fun showDetail(siteDetail: SiteDetailView) {

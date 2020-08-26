@@ -12,6 +12,7 @@ import com.prueba.domain.executor.Executor
 import com.prueba.domain.interactor.usecases.AddSiteToFavoriteUseCase
 import com.prueba.domain.interactor.usecases.GetSiteDetailUseCase
 import com.prueba.domain.interactor.usecases.GetSitesUseCase
+import com.prueba.domain.interactor.usecases.RemoveSiteFromFavoriteUseCase
 import com.prueba.domain.repository.Repository
 import com.prueba.firstappclean.BuildConfig
 import com.prueba.firstappclean.error.AndroidErrorHandler
@@ -35,6 +36,7 @@ val domainModule = Kodein.Module("domainModule") {
     bind() from singleton { GetSitesUseCase(executor = instance(), repository = instance()) }
     bind() from singleton { GetSiteDetailUseCase(executor = instance(), repository = instance())}
     bind() from singleton { AddSiteToFavoriteUseCase(repository = instance(), executor = instance()) }
+    bind() from singleton { RemoveSiteFromFavoriteUseCase(repository = instance(), executor = instance()) }
 }
 
 val dataModule = Kodein.Module("dataModule") {

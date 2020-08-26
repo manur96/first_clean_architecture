@@ -15,4 +15,6 @@
     <string name="datails">Detalles</string>
     <string name="contact">"Contacto: "</string>
     <string name="semicolon">;</string>
+    <string name="remove_to_favorites">Quitar de favoritos</string>
+    <string name="add_to_favorites">Añadir a favoritos</string>
 </resources>

@@ -39,9 +39,14 @@ class AppRepository(private val network: Network, private val settings: Settings
         }
     }
 
-    override fun getSiteById(id: String): Single<SiteDetail> = network.getPointById(id)
+    override fun getSiteById(id: String): Single<SiteDetail> = network.getPointById(id).map { site ->
+        site.isFav = id in settings.getFavorites()
+        return@map site
+    }
 
     override fun addSiteToFavorites(id: String): Completable = settings.addToFavorite(idSite = id)
+
+    override fun removeSiteFromFavorites(id: String): Completable = settings.removeFromFavorite(idSite = id)
 
 }
 
