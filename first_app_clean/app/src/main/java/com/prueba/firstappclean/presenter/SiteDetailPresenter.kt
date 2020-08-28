@@ -31,7 +31,7 @@ class SiteDetailPresenter(
                 },
                 onError = {
                     view.hideProgress()
-                    view.showErrorDialog()
+                    view.showError("Error al abrir el detalle")
                 }
         )
     }

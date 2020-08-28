@@ -1,16 +1,9 @@
 package com.prueba.firstappclean.view.activity
 
-import android.content.Intent
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.view.View
-import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.prueba.firstappclean.R
-import com.prueba.firstappclean.models.SiteView
 import com.prueba.firstappclean.presenter.SitesPresenter
-import com.prueba.firstappclean.view.adapter.SitesAdapter
-import kotlinx.android.synthetic.main.activity_sites.*
+import com.prueba.firstappclean.view.fragment.SitesFragment
 import kotlinx.android.synthetic.main.view_progress.*
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
@@ -29,48 +22,20 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
     override val activityModule: Kodein.Module = Kodein.Module("App") {
         bind<SitesPresenter>() with provider {
             SitesPresenter(
-                    getSitesUseCase = instance(),
                     view = this@SitesActivity,
                     errorHandler = instance()
             )
         }
     }
 
-    private val adapter = SitesAdapter {
-        presenter.onSiteClicked(it)
-    }
 
     override fun initializeUI() {
-        sites.adapter = adapter
-        sites.layoutManager = LinearLayoutManager(this)
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, SitesFragment.newInstance()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer2, SitesFragment.newInstance()).commit()
     }
 
     override fun registerListeners() {
-        fabFavorites.setOnClickListener {
-            if (presenter.onFavClicked()) {
-                fabFavorites.rippleColor = Color.parseColor("#EEEE2E")
-                fabFavorites.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#EEEE2E"))
-            } else {
-                fabFavorites.rippleColor = Color.parseColor("#03DAC5")
-                fabFavorites.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#03DAC5"))
-            }
-        }
-    }
 
-    override fun navigateToDetail(id: String) {
-        val intent = Intent(this, SiteDetailActivity::class.java)
-        intent.putExtra("id", id)
-        startActivity(intent)
-    }
-
-    override fun showSites(sites: List<SiteView>) {
-        adapter.replace(sites.toMutableList())
-    }
-
-    override fun showErrorDialog() {
-        AlertDialog.Builder(this).setTitle("Error")
-                .setMessage("No se han podido cargar los sitios correctamente")
-                .show()
     }
 
 }

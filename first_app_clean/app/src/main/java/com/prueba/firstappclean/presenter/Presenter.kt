@@ -39,6 +39,5 @@ abstract class Presenter<out V : Presenter.View>(protected val errorHandler: Err
 
         fun showMessage(messageId: Int)
 
-        fun showErrorDialog()
     }
 }

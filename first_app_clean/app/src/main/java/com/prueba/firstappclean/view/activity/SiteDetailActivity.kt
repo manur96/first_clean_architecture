@@ -83,14 +83,6 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
         mapIntent.resolveActivity(packageManager)?.let {
             startActivity(mapIntent)
         }
-
-
-    }
-
-    override fun showErrorDialog() {
-        AlertDialog.Builder(this).setTitle("Error")
-                .setMessage("No se han podido cargar los sitios correctamente")
-                .show()
     }
 
 }
