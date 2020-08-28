@@ -1,9 +1,12 @@
 package com.prueba.firstappclean.view.activity
 
+import android.content.Intent
+import android.net.Uri
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import com.prueba.firstappclean.R
+import com.prueba.firstappclean.extension.changeNull
 import com.prueba.firstappclean.models.SiteDetailView
 import com.prueba.firstappclean.presenter.SiteDetailPresenter
 import kotlinx.android.synthetic.main.activity_site_detail.*
@@ -44,6 +47,9 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
         removeToFavorites.setOnClickListener {
             presenter.onRemoveClicked()
         }
+        goToMap.setOnClickListener {
+            presenter.onMapClicked()
+        }
     }
 
     override fun getId(): String {
@@ -58,13 +64,28 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
     override fun showDetail(siteDetail: SiteDetailView) {
         titleDetail.text = siteDetail.title
         addres.text = siteDetail.address
+        addres.changeNull()
         transport.text = siteDetail.transport
+        transport.changeNull()
         email.text = siteDetail.email
+        email.changeNull()
         geocoordinatesDetail.text = siteDetail.geocoordinates
         description.text = siteDetail.description
+        description.changeNull()
         phone.text = siteDetail.phone
+        phone.changeNull()
     }
 
+    override fun navigateToMap() {
+        val intentUri = Uri.parse("geo:${geocoordinatesDetail.text}")
+        val mapIntent = Intent(Intent.ACTION_VIEW, intentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+        mapIntent.resolveActivity(packageManager)?.let {
+            startActivity(mapIntent)
+        }
+
+
+    }
 
     override fun showErrorDialog() {
         AlertDialog.Builder(this).setTitle("Error")

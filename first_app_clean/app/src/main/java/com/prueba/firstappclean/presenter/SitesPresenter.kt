@@ -13,6 +13,10 @@ class SitesPresenter(
     var filter = false
 
     override fun initialize() {
+
+    }
+
+    override fun resume() {
         view.showProgress()
         getSitesUseCase.execute(
                 filter = filter,
@@ -27,10 +31,6 @@ class SitesPresenter(
         )
     }
 
-    override fun resume() {
-
-    }
-
     override fun stop() {
 
     }
@@ -43,7 +43,7 @@ class SitesPresenter(
         view.navigateToDetail(site.id)
     }
 
-    fun onFavClicked() : Boolean {
+    fun onFavClicked(): Boolean {
         filter = !filter
         getSitesUseCase.execute(
                 filter = filter,

@@ -75,11 +75,17 @@ class SiteDetailPresenter(
         )
     }
 
+    fun onMapClicked() {
+        view.navigateToMap()
+    }
+
     interface View : Presenter.View {
         fun showDetail(siteDetail: SiteDetailView)
 
         fun getId(): String
 
         fun showRemoveFavButton(isFav: Boolean)
+
+        fun navigateToMap()
     }
 }
