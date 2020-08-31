@@ -10,13 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="553d7367-e8d4-40ef-9d1a-f93c89e7202a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/SitesListPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/fragment/SitesFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sites.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/adapter/ViewPagerAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/fragment/MapsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_maps.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/release/res/values/google_maps_api.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/Presenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/Presenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/SiteDetailPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/SiteDetailPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/SitesPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/presenter/SitesPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SiteDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SiteDetailActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SitesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prueba/firstappclean/view/activity/SitesActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sites.xml" afterDir="false" />
@@ -85,6 +86,9 @@
       <recent name="com.prueba.domain.models" />
       <recent name="com.prueba.data.datasource.network.api" />
       <recent name="com.prueba.firstappclean.view.adapter" />
+    </key>
+    <key name="android.template.1212574413">
+      <recent name="com.prueba.firstappclean.view.fragment" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data/src/main/java/com/prueba/data" />
@@ -220,12 +224,12 @@
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="458" y="191" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1440.821@0.23.1440.821" timestamp="1597391775524" />
-    <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1598612159026">
-      <screen x="0" y="23" width="1440" height="823" />
+    <state x="499" y="151" key="#com.intellij.ide.util.MemberChooser" timestamp="1598864920933">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
     <state x="499" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1597921611421" />
-    <state x="499" y="151" key="#com.intellij.ide.util.MemberChooser/0.23.1440.814@0.23.1440.814" timestamp="1597998566542" />
-    <state x="499" y="151" key="#com.intellij.ide.util.MemberChooser/0.23.1440.816@0.23.1440.816" timestamp="1597831821846" />
+    <state x="499" y="151" key="#com.intellij.ide.util.MemberChooser/0.23.1440.814@0.23.1440.814" timestamp="1598863728409" />
+    <state x="499" y="151" key="#com.intellij.ide.util.MemberChooser/0.23.1440.816@0.23.1440.816" timestamp="1598864920933" />
     <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.821@0.23.1440.821" timestamp="1597056538839" />
     <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.822@0.23.1440.822" timestamp="1598261936233" />
     <state x="499" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1598612159026" />
@@ -242,9 +246,10 @@
     </state>
     <state x="458" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.823@0.23.1440.823" timestamp="1597315017214" />
     <state x="458" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.825@0.23.1440.825" timestamp="1596706609180" />
-    <state x="308" y="191" key="AndroidCreateResourceFileDialog" timestamp="1598611639922">
-      <screen x="0" y="23" width="1440" height="823" />
+    <state x="308" y="190" key="AndroidCreateResourceFileDialog" timestamp="1598862198235">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
+    <state x="308" y="190" key="AndroidCreateResourceFileDialog/0.23.1440.816@0.23.1440.816" timestamp="1598862198235" />
     <state x="308" y="191" key="AndroidCreateResourceFileDialog/0.23.1440.823@0.23.1440.823" timestamp="1598611639922" />
     <state x="575" y="286" key="AndroidCreateXmlResourceDialog" timestamp="1598601590149">
       <screen x="0" y="23" width="1440" height="813" />
@@ -370,13 +375,14 @@
     <state x="390" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.822@0.23.1440.822" timestamp="1596699214327" />
     <state x="390" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.823@0.23.1440.823" timestamp="1597131149188" />
     <state x="390" y="267" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1597315301795" />
-    <state x="482" y="68" key="refactoring.ChangeSignatureDialog" timestamp="1598428875806">
-      <screen x="0" y="23" width="1440" height="814" />
+    <state x="482" y="69" key="refactoring.ChangeSignatureDialog" timestamp="1598868965251">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="482" y="68" key="refactoring.ChangeSignatureDialog/0.23.1440.814@0.23.1440.814" timestamp="1598428875806" />
     <state x="482" y="68" key="refactoring.ChangeSignatureDialog/0.23.1440.822@0.23.1440.822" timestamp="1598257400466" />
-    <state x="385" y="168" width="670" height="672" key="search.everywhere.popup" timestamp="1598521754664">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state x="482" y="69" key="refactoring.ChangeSignatureDialog/0.23.1440.826@0.23.1440.826" timestamp="1598868965251" />
+    <state x="385" y="170" width="670" height="681" key="search.everywhere.popup" timestamp="1598868437499">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="385" y="161" width="670" height="742" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1597921616517" />
     <state x="385" y="167" width="670" height="669" key="search.everywhere.popup/0.23.1440.813@0.23.1440.813" timestamp="1598429177627" />
@@ -386,7 +392,7 @@
     <state x="385" y="169" width="670" height="676" key="search.everywhere.popup/0.23.1440.822@0.23.1440.822" timestamp="1598518294105" />
     <state x="385" y="170" width="670" height="678" key="search.everywhere.popup/0.23.1440.823@0.23.1440.823" timestamp="1598004206498" />
     <state x="385" y="170" width="670" height="679" key="search.everywhere.popup/0.23.1440.825@0.23.1440.825" timestamp="1598353956772" />
-    <state x="385" y="170" width="670" height="681" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1598351294572" />
+    <state x="385" y="170" width="670" height="681" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1598868437499" />
     <state x="385" y="170" width="670" height="681" key="search.everywhere.popup/0.23.1440.827@0.23.1440.827" timestamp="1598348492678" />
   </component>
   <component name="XDebuggerManager">

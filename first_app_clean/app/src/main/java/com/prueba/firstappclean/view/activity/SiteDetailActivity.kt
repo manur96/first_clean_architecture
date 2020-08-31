@@ -3,7 +3,6 @@ package com.prueba.firstappclean.view.activity
 import android.content.Intent
 import android.net.Uri
 import android.view.View
-import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.extension.changeNull
@@ -52,9 +51,8 @@ class SiteDetailActivity : RootActivity<SiteDetailPresenter.View>(), SiteDetailP
         }
     }
 
-    override fun getId(): String {
-        return intent.getStringExtra("id")
-    }
+    override fun getId(): String = intent.getStringExtra("id")
+
 
     override fun showRemoveFavButton(isFav: Boolean) {
         addToFavorites.isVisible = !isFav

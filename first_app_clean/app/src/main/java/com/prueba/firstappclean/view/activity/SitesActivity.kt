@@ -1,9 +1,16 @@
 package com.prueba.firstappclean.view.activity
 
 import android.view.View
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.presenter.SitesPresenter
+import com.prueba.firstappclean.view.adapter.ViewPagerAdapter
+import com.prueba.firstappclean.view.fragment.MapsFragment
 import com.prueba.firstappclean.view.fragment.SitesFragment
+import kotlinx.android.synthetic.main.activity_sites.*
 import kotlinx.android.synthetic.main.view_progress.*
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
@@ -28,14 +35,17 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
         }
     }
 
-
     override fun initializeUI() {
-        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, SitesFragment.newInstance()).commit()
-        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer2, SitesFragment.newInstance()).commit()
+        val pagerAdapter = ViewPagerAdapter(supportFragmentManager)
+
+        pagerAdapter.addFragment("Sites", SitesFragment.newInstance())
+        pagerAdapter.addFragment("Map", MapsFragment())
+        pager.adapter = pagerAdapter
+        tabLayout.setupWithViewPager(pager)
     }
 
     override fun registerListeners() {
-
+        //nothing to do
     }
 
 }
