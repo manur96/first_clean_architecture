@@ -6,4 +6,5 @@
     <color name="greyBack">#CFCFCF</color>
     <color name="favSiteColor">#0060CD</color>
     <color name="changeColorFAB">#EEEE2E</color>
+    <color name="white">#FFFFFF</color>
 </resources>

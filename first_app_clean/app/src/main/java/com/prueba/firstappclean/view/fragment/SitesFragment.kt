@@ -1,9 +1,6 @@
 package com.prueba.firstappclean.view.fragment
 
 import android.content.Intent
-import android.content.res.ColorStateList
-import android.graphics.Color
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.extension.hideMe
@@ -32,7 +29,6 @@ class SitesFragment : RootFragment<SitesListPresenter.View>(), SitesListPresente
     override val fragmentModule: Kodein.Module = Kodein.Module("App") {
         bind<SitesListPresenter>() with provider {
             SitesListPresenter(
-                    getSitesUseCase = instance(),
                     view = this@SitesFragment,
                     errorHandler = instance()
             )
@@ -49,15 +45,7 @@ class SitesFragment : RootFragment<SitesListPresenter.View>(), SitesListPresente
     }
 
     override fun registerListeners() {
-        fabFavorites.setOnClickListener {
-            if (presenter.onFavClicked()) {
-                fabFavorites.rippleColor = Color.parseColor("#EEEE2E")
-                fabFavorites.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#EEEE2E"))
-            } else {
-                fabFavorites.rippleColor = Color.parseColor("#03DAC5")
-                fabFavorites.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#03DAC5"))
-            }
-        }
+        //nothing to do
     }
 
     override fun navigateToDetail(id: String) {
@@ -77,14 +65,4 @@ class SitesFragment : RootFragment<SitesListPresenter.View>(), SitesListPresente
     override fun hideProgress() {
         progressView.hideMe()
     }
-
-    override fun showErrorDialog() {
-        context?.let {
-            AlertDialog.Builder(it).setTitle("Error")
-                    .setMessage("No se han podido cargar los sitios correctamente")
-                    .show()
-        }
-
-    }
-
 }

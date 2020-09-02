@@ -1,10 +1,8 @@
 package com.prueba.firstappclean.view.activity
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
-import androidx.viewpager.widget.ViewPager
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.presenter.SitesPresenter
 import com.prueba.firstappclean.view.adapter.ViewPagerAdapter
@@ -29,6 +27,7 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
     override val activityModule: Kodein.Module = Kodein.Module("App") {
         bind<SitesPresenter>() with provider {
             SitesPresenter(
+                    getSitesUseCase = instance(),
                     view = this@SitesActivity,
                     errorHandler = instance()
             )
@@ -36,8 +35,9 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
     }
 
     override fun initializeUI() {
-        val pagerAdapter = ViewPagerAdapter(supportFragmentManager)
+        supportActionBar?.elevation = 0F
 
+        val pagerAdapter = ViewPagerAdapter(supportFragmentManager)
         pagerAdapter.addFragment("Sites", SitesFragment.newInstance())
         pagerAdapter.addFragment("Map", MapsFragment())
         pager.adapter = pagerAdapter
@@ -45,7 +45,15 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
     }
 
     override fun registerListeners() {
-        //nothing to do
+        fabFavorites.setOnClickListener {
+            if (presenter.onFavClicked()) {
+                fabFavorites.rippleColor = Color.parseColor("#EEEE2E")
+                fabFavorites.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#EEEE2E"))
+            } else {
+                fabFavorites.rippleColor = Color.parseColor("#03DAC5")
+                fabFavorites.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#03DAC5"))
+            }
+        }
     }
 
 }

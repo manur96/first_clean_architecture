@@ -1,68 +1,43 @@
 package com.prueba.firstappclean.presenter
 
 import com.prueba.domain.interactor.usecases.GetSitesUseCase
+import com.prueba.firstappclean.Subject
 import com.prueba.firstappclean.error.ErrorHandler
 import com.prueba.firstappclean.mappers.toSiteView
 import com.prueba.firstappclean.models.SiteView
+import io.reactivex.disposables.Disposable
 
 class SitesListPresenter(
-        private val getSitesUseCase: GetSitesUseCase,
         view: View,
         errorHandler: ErrorHandler) : Presenter<SitesListPresenter.View>(errorHandler = errorHandler, view = view) {
 
-    var filter = false
+    private lateinit var filtersSubscription: Disposable
 
     override fun initialize() {
-
+        filtersSubscription = Subject.listSitesSubject.subscribe {
+            view.showSites(it.map { it.toSiteView() })
+        }
     }
 
     override fun resume() {
-        view.showProgress()
-        getSitesUseCase.execute(
-                filter = filter,
-                onSuccess = {
-                    view.showSites(it.map { it.toSiteView() })
-                    view.hideProgress()
-                },
-                onError = {
-                    view.hideProgress()
-                    view.showErrorDialog()
-                }
-        )
+        //nothing to do
     }
 
     override fun stop() {
-
+        //nothing to do
     }
 
     override fun destroy() {
-        getSitesUseCase.clear()
+        //nothing to do
     }
 
     fun onSiteClicked(site: SiteView) {
         view.navigateToDetail(site.id)
     }
 
-    fun onFavClicked(): Boolean {
-        filter = !filter
-        getSitesUseCase.execute(
-                filter = filter,
-                onSuccess = {
-                    view.showSites(it.map { it.toSiteView() })
-                },
-                onError = {
-                    view.showErrorDialog()
-                }
-        )
-        return filter
-    }
-
     interface View : Presenter.View {
         fun navigateToDetail(id: String)
-
         fun showSites(sites: List<SiteView>)
-
-        fun showErrorDialog()
     }
 
 }
