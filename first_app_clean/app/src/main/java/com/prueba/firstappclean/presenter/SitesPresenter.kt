@@ -55,7 +55,7 @@ class SitesPresenter(
     }
 
     interface View : Presenter.View {
-
+        //nothing to do
     }
 
 

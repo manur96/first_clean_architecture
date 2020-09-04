@@ -1,23 +1,27 @@
 package com.prueba.firstappclean.presenter
 
+import com.prueba.domain.models.Site
 import com.prueba.firstappclean.Subject
 import com.prueba.firstappclean.error.ErrorHandler
-import com.prueba.firstappclean.mappers.toSiteView
-import com.prueba.firstappclean.models.SiteView
 import io.reactivex.disposables.Disposable
 
-class SitesListPresenter(
+class MapsPresenter(
         view: View,
-        errorHandler: ErrorHandler) : Presenter<SitesListPresenter.View>(errorHandler = errorHandler, view = view) {
+        errorHandler: ErrorHandler) : Presenter<MapsPresenter.View>(errorHandler = errorHandler, view = view) {
 
     private lateinit var sitesSubscription: Disposable
 
+    private var sites: List<Site> = listOf()
+
     override fun initialize() {
         sitesSubscription = Subject.listSitesSubject.subscribe {
-            view.showSites(it.map {
-                it.toSiteView()
-            })
+            sites = it
+            showSites()
         }
+    }
+
+    private fun showSites() {
+        view.showSites(sites)
     }
 
     override fun resume() {
@@ -32,13 +36,11 @@ class SitesListPresenter(
         //nothing to do
     }
 
-    fun onSiteClicked(site: SiteView) {
-        view.navigateToDetail(site.id)
+    fun onMapReady() {
+        showSites()
     }
 
     interface View : Presenter.View {
-        fun navigateToDetail(id: String)
-        fun showSites(sites: List<SiteView>)
+        fun showSites(sites: List<Site>)
     }
-
 }

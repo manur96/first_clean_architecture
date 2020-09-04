@@ -4,29 +4,53 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.prueba.domain.models.Site
 import com.prueba.firstappclean.R
+import com.prueba.firstappclean.extension.hideMe
+import com.prueba.firstappclean.extension.showMe
+import com.prueba.firstappclean.presenter.MapsPresenter
+import kotlinx.android.synthetic.main.view_progress.*
+import org.kodein.di.Kodein
+import org.kodein.di.generic.bind
+import org.kodein.di.generic.instance
+import org.kodein.di.generic.provider
 
-class MapsFragment : Fragment() {
+
+class MapsFragment : RootFragment<MapsPresenter.View>(), MapsPresenter.View {
+
+    companion object {
+        private val BARCELONA = LatLng(41.38879, 2.15899)
+    }
+
+    private var googleMap: GoogleMap? = null
 
     private val callback = OnMapReadyCallback { googleMap ->
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
-        val barcelona = LatLng(41.38879, 2.15899)
-        googleMap.addMarker(MarkerOptions().position(barcelona).title("Marker in Barcelona"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(barcelona))
+        this.googleMap = googleMap
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(BARCELONA))
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(10F), 3000, null)
+        val uiSettings = googleMap.uiSettings
+        uiSettings.isScrollGesturesEnabled = true
+        uiSettings.isZoomControlsEnabled = true
+        presenter.onMapReady()
+    }
+
+    override val presenter: MapsPresenter by instance<MapsPresenter>()
+
+    override val layoutResourceId: Int = R.layout.fragment_maps
+
+    override val fragmentModule: Kodein.Module = Kodein.Module("App") {
+        bind<MapsPresenter>() with provider {
+            MapsPresenter(
+                    view = this@MapsFragment,
+                    errorHandler = instance()
+            )
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -39,5 +63,28 @@ class MapsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+    }
+
+    override fun initializeUI() {
+        //nothing to do
+    }
+
+    override fun registerListeners() {
+        //nothing to do
+    }
+
+    override fun showSites(sites: List<Site>) {
+        googleMap?.clear()
+        sites.map {
+            googleMap?.addMarker(MarkerOptions().position(LatLng(it.location.lat, it.location.lng)).title(it.title))
+        }
+    }
+
+    override fun showProgress() {
+        progressView.showMe()
+    }
+
+    override fun hideProgress() {
+        progressView.hideMe()
     }
 }

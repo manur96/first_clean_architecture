@@ -1,5 +1,6 @@
 package com.prueba.data.repository
 
+import com.prueba.data.datasource.Database
 import com.prueba.data.datasource.network.Network
 import com.prueba.data.persistence.Settings
 import com.prueba.domain.models.Site
@@ -8,7 +9,7 @@ import com.prueba.domain.repository.Repository
 import io.reactivex.Completable
 import io.reactivex.Single
 
-class AppRepository(private val network: Network, private val settings: Settings) : Repository {
+class AppRepository(private val network: Network, private val settings: Settings, private val database: Database) : Repository {
 
     override fun getAllSites(onlyFavourites: Boolean): Single<List<Site>> {
         val networkResponse = network.getAllPoints()
@@ -20,7 +21,9 @@ class AppRepository(private val network: Network, private val settings: Settings
         }
 
         return if (onlyFavourites) {
-            networkResponse.map { list ->
+            networkResponse.onErrorResumeNext {
+                database.getSites()
+            }.map { list ->
                 list
                         .filter { site -> site.id in favoriteSites }
                         .map {
@@ -29,7 +32,9 @@ class AppRepository(private val network: Network, private val settings: Settings
                         }
             }
         } else {
-            networkResponse.map { list ->
+            networkResponse.onErrorResumeNext {
+                database.getSites()
+            }.map { list ->
                 list
                         .map { site ->
                             site.fav = site.id in favoriteSites

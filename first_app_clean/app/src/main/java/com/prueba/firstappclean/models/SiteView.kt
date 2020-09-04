@@ -1,6 +1,6 @@
 package com.prueba.firstappclean.models
 
-data class SiteView (
+data class SiteView(
         val id: String,
         val title: String,
         val geocoordinates: String,
