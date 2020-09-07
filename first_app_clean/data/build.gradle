@@ -11,6 +11,7 @@ android {
         targetSdkVersion rootProject.androidTargetSdkVersion
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,11 +32,14 @@ android {
 
 realm {
     kotlinExtensionsEnabled = true
+    syncEnabled = true
 }
 
 dependencies {
     def dataDependencies = rootProject.ext.dataDependencies
     def dataTestDependencies = rootProject.ext.dataTestDependencies
+
+    implementation 'com.android.support:multidex:1.0.3'
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
