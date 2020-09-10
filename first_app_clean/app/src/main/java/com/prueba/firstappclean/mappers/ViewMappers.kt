@@ -10,7 +10,8 @@ fun Site.toSiteView(): SiteView = SiteView(
         title = title,
         geocoordinates = "${location.lat},${location.lng}",
         fav = fav,
-        hasDetail = hasDetail
+        hasDetail = hasDetail,
+        isFromLocal = isFromLocal
 )
 
 fun SiteDetail.toSiteDetailView(): SiteDetailView = SiteDetailView(

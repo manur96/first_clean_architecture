@@ -33,7 +33,9 @@ class SitesListPresenter(
     }
 
     fun onSiteClicked(site: SiteView) {
-        view.navigateToDetail(site.id)
+        if (!site.isFromLocal || site.hasDetail) {
+            view.navigateToDetail(site.id)
+        }
     }
 
     interface View : Presenter.View {

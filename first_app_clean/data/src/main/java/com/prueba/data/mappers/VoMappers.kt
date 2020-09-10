@@ -1,6 +1,5 @@
 package com.prueba.data.mappers
 
-import com.prueba.data.model.LocationVo
 import com.prueba.data.model.SiteDetailVo
 import com.prueba.data.model.SiteVo
 import com.prueba.domain.models.Location
@@ -10,13 +9,15 @@ import com.prueba.domain.models.SiteDetail
 fun Site.toVo(): SiteVo = SiteVo(
         id = id,
         title = title,
+        lat = location.lat,
+        lng = location.lng,
         hasDetail = hasDetail
 )
 
 fun SiteVo.toModel(): Site = Site(
         id = id,
         title = title,
-        location = Location(0.0, 0.0), //Fixme
+        location = Location(lat, lng),
         hasDetail = hasDetail
 )
 
@@ -42,14 +43,4 @@ fun SiteDetailVo.toModel(): SiteDetail = SiteDetail(
         phone = phone,
         transport = transport,
         isFav = isFav
-)
-
-fun Location.toVo(): LocationVo = LocationVo(
-        lat = lat,
-        lng = lng
-)
-
-fun LocationVo.toModel(): Location = Location(
-        lat = lat,
-        lng = lng
 )

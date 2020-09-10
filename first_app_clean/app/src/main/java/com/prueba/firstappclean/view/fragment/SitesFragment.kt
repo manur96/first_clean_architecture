@@ -1,20 +1,26 @@
 package com.prueba.firstappclean.view.fragment
 
 import android.content.Intent
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.prueba.data.error
 import com.prueba.firstappclean.R
 import com.prueba.firstappclean.extension.hideMe
 import com.prueba.firstappclean.extension.showMe
+import com.prueba.firstappclean.extension.toast
 import com.prueba.firstappclean.models.SiteView
 import com.prueba.firstappclean.presenter.SitesListPresenter
 import com.prueba.firstappclean.view.activity.SiteDetailActivity
 import com.prueba.firstappclean.view.adapter.SitesAdapter
 import kotlinx.android.synthetic.main.fragment_sites.*
+import kotlinx.android.synthetic.main.item_site.*
 import kotlinx.android.synthetic.main.view_progress.*
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
+import kotlin.check
 
 class SitesFragment : RootFragment<SitesListPresenter.View>(), SitesListPresenter.View {
 
@@ -49,9 +55,9 @@ class SitesFragment : RootFragment<SitesListPresenter.View>(), SitesListPresente
     }
 
     override fun navigateToDetail(id: String) {
-        val intent = Intent(activity, SiteDetailActivity::class.java)
-        intent.putExtra("id", id)
-        startActivity(intent)
+            val intent = Intent(activity, SiteDetailActivity::class.java)
+            intent.putExtra("id", id)
+            startActivity(intent)
     }
 
     override fun showSites(sites: List<SiteView>) {

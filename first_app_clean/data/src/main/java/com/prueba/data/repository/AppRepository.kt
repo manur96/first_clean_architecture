@@ -12,6 +12,8 @@ import io.reactivex.Single
 class AppRepository(private val network: Network, private val settings: Settings, private val database: Database) : Repository {
 
     override fun getAllSites(onlyFavourites: Boolean): Single<List<Site>> {
+        var isFromLocal = false
+
         val networkResponse = network.getAllPoints().map {
             database.saveSites(it)
             it
@@ -27,6 +29,7 @@ class AppRepository(private val network: Network, private val settings: Settings
 
         return if (onlyFavourites) {
             networkResponse.onErrorResumeNext {
+                isFromLocal = true
                 database.getSites()
             }.map { list ->
                 list
@@ -34,24 +37,26 @@ class AppRepository(private val network: Network, private val settings: Settings
                         .map {
                             it.fav = true
                             it.hasDetail = it.id in localDetails
+                            it.isFromLocal = isFromLocal
                             it
                         }
             }
         } else {
             networkResponse.onErrorResumeNext {
+                isFromLocal = true
                 database.getSites()
             }.map { list ->
                 list
                         .map { site ->
                             site.fav = site.id in favoriteSites
                             site.hasDetail = site.id in localDetails
+                            site.isFromLocal = isFromLocal
                             site
                         }
             }
         }
     }
 
-    //Traerte el detalle
     override fun getSiteById(id: String): Single<SiteDetail> {
         val networkResponse = network.getPointById(id).map {
             database.saveDatail(it)

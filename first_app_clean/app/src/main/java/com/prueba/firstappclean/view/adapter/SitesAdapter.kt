@@ -21,9 +21,7 @@ class SitesAdapter(onSiteClick: (SiteView) -> Unit) : RootAdapter<SiteView>(onIt
             } else {
                 itemView.title.setTextColor(Color.DKGRAY)
             }
-            if (model.hasDetail) {
-                itemView.check.isVisible = true
-            }
+            itemView.check.isVisible = model.hasDetail
             itemView.geocoordinates.text = model.geocoordinates
         }
     }

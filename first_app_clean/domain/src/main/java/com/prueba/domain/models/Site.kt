@@ -5,5 +5,6 @@ data class Site (
         val title: String,
         val location: Location,
         var fav: Boolean = false,
-        var hasDetail: Boolean = false
+        var hasDetail: Boolean = false,
+        var isFromLocal: Boolean = false
 )
