@@ -4,5 +4,6 @@ data class SiteView(
         val id: String,
         val title: String,
         val geocoordinates: String,
-        var fav: Boolean = false
+        var fav: Boolean = false,
+        var hasDetail:Boolean = false
 )

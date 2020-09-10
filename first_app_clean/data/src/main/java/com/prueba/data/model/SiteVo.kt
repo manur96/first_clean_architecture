@@ -6,5 +6,6 @@ import io.realm.annotations.PrimaryKey
 open class SiteVo(
         @PrimaryKey var id: String = "",
         var title: String = "",
-        var fav: Boolean = false
+        //var location: LocationVo,
+        var hasDetail: Boolean = false
 ) : RealmObject()

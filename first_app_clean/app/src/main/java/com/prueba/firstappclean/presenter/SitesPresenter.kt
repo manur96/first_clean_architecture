@@ -3,8 +3,6 @@ package com.prueba.firstappclean.presenter
 import com.prueba.domain.interactor.usecases.GetSitesUseCase
 import com.prueba.firstappclean.Subject
 import com.prueba.firstappclean.error.ErrorHandler
-import com.prueba.firstappclean.mappers.toSiteView
-import com.prueba.firstappclean.models.SiteView
 
 class SitesPresenter(
         private val getSitesUseCase: GetSitesUseCase,
@@ -27,7 +25,7 @@ class SitesPresenter(
                 },
                 onError = {
                     view.hideProgress()
-                    view.showError("Error")
+                    view.showError(it.toString())
                 }
         )
     }

@@ -4,6 +4,7 @@ import android.app.Application
 import com.prueba.firstappclean.di.appModule
 import com.prueba.firstappclean.di.dataModule
 import com.prueba.firstappclean.di.domainModule
+import io.realm.Realm
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 
@@ -16,6 +17,11 @@ class App : Application(), KodeinAware {
         import(appModule(this@App))
         import(domainModule)
         import(dataModule)
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        Realm.init(this)
     }
 
 }

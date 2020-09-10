@@ -15,4 +15,8 @@ open class SiteDetailVo(
         var title: String = "",
         var transport: String = "",
         var isFav: Boolean = false
-) : RealmObject()
+) : RealmObject() {
+    companion object {
+        const val PRIMARY_KEY = "id"
+    }
+}
