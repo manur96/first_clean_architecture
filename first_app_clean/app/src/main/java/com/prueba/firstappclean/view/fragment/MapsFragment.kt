@@ -1,9 +1,12 @@
 package com.prueba.firstappclean.view.fragment
 
+import android.Manifest
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -30,13 +33,25 @@ class MapsFragment : RootFragment<MapsPresenter.View>(), MapsPresenter.View {
 
     private var googleMap: GoogleMap? = null
 
+    val requestPermissionLauncher =
+            registerForActivityResult(ActivityResultContracts.RequestPermission()
+            ) { isGranted: Boolean ->
+                if (isGranted) {
+                    Toast.makeText(context, "Permiso aceptado", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(context, "Permiso denegado", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+
     private val callback = OnMapReadyCallback { googleMap ->
         this.googleMap = googleMap
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(BARCELONA))
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(10F), 3000, null)
         val uiSettings = googleMap.uiSettings
         uiSettings.isScrollGesturesEnabled = true
-        uiSettings.isZoomControlsEnabled = true
+        uiSettings.isZoomGesturesEnabled = true
+
         presenter.onMapReady()
     }
 
@@ -62,6 +77,7 @@ class MapsFragment : RootFragment<MapsPresenter.View>(), MapsPresenter.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
+        requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         mapFragment?.getMapAsync(callback)
     }
 
