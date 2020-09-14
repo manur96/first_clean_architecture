@@ -1,12 +1,14 @@
 package com.prueba.firstappclean.view.fragment
 
 import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -33,7 +35,7 @@ class MapsFragment : RootFragment<MapsPresenter.View>(), MapsPresenter.View {
 
     private var googleMap: GoogleMap? = null
 
-    val requestPermissionLauncher =
+    private val requestPermissionLauncher =
             registerForActivityResult(ActivityResultContracts.RequestPermission()
             ) { isGranted: Boolean ->
                 if (isGranted) {
@@ -51,6 +53,7 @@ class MapsFragment : RootFragment<MapsPresenter.View>(), MapsPresenter.View {
         val uiSettings = googleMap.uiSettings
         uiSettings.isScrollGesturesEnabled = true
         uiSettings.isZoomGesturesEnabled = true
+        uiSettings.isMyLocationButtonEnabled = true
 
         presenter.onMapReady()
     }
@@ -77,7 +80,6 @@ class MapsFragment : RootFragment<MapsPresenter.View>(), MapsPresenter.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-        requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         mapFragment?.getMapAsync(callback)
     }
 
@@ -91,6 +93,11 @@ class MapsFragment : RootFragment<MapsPresenter.View>(), MapsPresenter.View {
 
     override fun showSites(sites: List<Site>) {
         googleMap?.clear()
+        requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+        if (ActivityCompat.checkSelfPermission(this.requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return
+        }
+        googleMap?.isMyLocationEnabled = true
         sites.map {
             googleMap?.addMarker(MarkerOptions().position(LatLng(it.location.lat, it.location.lng)).title(it.title))
         }
