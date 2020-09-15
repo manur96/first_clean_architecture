@@ -38,8 +38,8 @@ class SitesActivity : RootActivity<SitesPresenter.View>(), SitesPresenter.View {
         supportActionBar?.elevation = 0F
 
         val pagerAdapter = ViewPagerAdapter(supportFragmentManager)
-        pagerAdapter.addFragment("Sites", SitesFragment.newInstance())
-        pagerAdapter.addFragment("Map", MapsFragment())
+        pagerAdapter.addFragment("Sitios", SitesFragment.newInstance())
+        pagerAdapter.addFragment("Mapa", MapsFragment())
         pager.adapter = pagerAdapter
         tabLayout.setupWithViewPager(pager)
     }

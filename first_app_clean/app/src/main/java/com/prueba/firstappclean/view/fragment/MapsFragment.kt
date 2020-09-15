@@ -1,6 +1,7 @@
 package com.prueba.firstappclean.view.fragment
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -39,9 +40,9 @@ class MapsFragment : RootFragment<MapsPresenter.View>(), MapsPresenter.View {
             registerForActivityResult(ActivityResultContracts.RequestPermission()
             ) { isGranted: Boolean ->
                 if (isGranted) {
-                    Toast.makeText(context, "Permiso aceptado", Toast.LENGTH_SHORT).show()
+                    presenter.onPermissionGranted()
                 } else {
-                    Toast.makeText(context, "Permiso denegado", Toast.LENGTH_SHORT).show()
+                    presenter.onPermissionRejected()
                 }
             }
 
@@ -93,14 +94,22 @@ class MapsFragment : RootFragment<MapsPresenter.View>(), MapsPresenter.View {
 
     override fun showSites(sites: List<Site>) {
         googleMap?.clear()
-        requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
-        if (ActivityCompat.checkSelfPermission(this.requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return
-        }
-        googleMap?.isMyLocationEnabled = true
         sites.map {
             googleMap?.addMarker(MarkerOptions().position(LatLng(it.location.lat, it.location.lng)).title(it.title))
         }
+    }
+
+    @SuppressLint("MissingPermission")
+    override fun showCurrentLocation() {
+        googleMap?.isMyLocationEnabled = true
+    }
+
+    override fun showNoPermissionGranted() {
+        Toast.makeText(context, "Permiso denegado", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun requestLocationPermission() {
+        requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
     }
 
     override fun showProgress() {

@@ -18,10 +18,19 @@ class MapsPresenter(
             sites = it
             showSites()
         }
+        view.requestLocationPermission()
     }
 
     private fun showSites() {
         view.showSites(sites)
+    }
+
+    fun onPermissionGranted() {
+        view.showCurrentLocation()
+    }
+
+    fun onPermissionRejected() {
+        view.showNoPermissionGranted()
     }
 
     override fun resume() {
@@ -42,5 +51,8 @@ class MapsPresenter(
 
     interface View : Presenter.View {
         fun showSites(sites: List<Site>)
+        fun showCurrentLocation()
+        fun showNoPermissionGranted()
+        fun requestLocationPermission()
     }
 }
